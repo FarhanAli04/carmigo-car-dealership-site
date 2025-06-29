@@ -156,11 +156,28 @@ export default function InventoryPage() {
 
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800" />
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 animate-pulse" />
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="https://img.freepik.com/free-photo/couple-stands-bugatti-lamborgini-somewhere-monte-carlo_1304-3910.jpg"
+            alt="Luxury Car Background"
+            fill
+            className="object-cover"
+            priority
+            quality={100}
+          />
+        </div>
+        
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black/30 via-black/20 to-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-black/5 animate-pulse" />
 
         <div className="container-custom relative z-10 text-center text-white">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 0.8 }}
+          >
             <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
               <Sparkles className="w-4 h-4 text-yellow-400" />
               <span className="text-yellow-400 font-medium text-sm">Premium Inventory</span>
