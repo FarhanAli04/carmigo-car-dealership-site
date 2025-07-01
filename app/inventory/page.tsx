@@ -151,7 +151,7 @@ export default function InventoryPage() {
     ).length + (searchTerm ? 1 : 0)
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50/30">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50/20">
       <ProfessionalHeader />
 
       {/* Hero Section */}
@@ -169,8 +169,8 @@ export default function InventoryPage() {
         </div>
         
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black/30 via-black/20 to-black/40" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-black/5 animate-pulse" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0A1F4D]/90 via-[#0A1F4D]/70 to-[#0A1F4D]/90" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0A1F4D]/50 to-[#0A1F4D]/30 animate-pulse" />
 
         <div className="container-custom relative z-10 text-center text-white">
           <motion.div 
@@ -178,12 +178,12 @@ export default function InventoryPage() {
             animate={{ opacity: 1, y: 0 }} 
             transition={{ duration: 0.8 }}
           >
-            <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
-              <Sparkles className="w-4 h-4 text-yellow-400" />
-              <span className="text-yellow-400 font-medium text-sm">Premium Inventory</span>
+            <div className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
+              <Sparkles className="w-4 h-4 text-white" />
+              <span className="text-white font-medium text-sm">Premium Inventory</span>
             </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-white to-[#FF3B30] bg-clip-text text-transparent">
                 Browse Our Inventory
               </span>
             </h1>
@@ -198,7 +198,7 @@ export default function InventoryPage() {
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Filters Sidebar */}
           <div className={`lg:w-80 ${showFilters ? "block" : "hidden lg:block"}`}>
-            <Card className="sticky top-24 border-0 bg-white/80 backdrop-blur-xl shadow-xl">
+            <Card className="sticky top-24 border-0 bg-white/90 backdrop-blur-xl shadow-xl">
               <CardContent className="p-6">
                 <div className="flex items-center justify-between mb-6">
                   <h2 className="text-xl font-bold text-slate-800 flex items-center gap-2">
@@ -209,7 +209,8 @@ export default function InventoryPage() {
                     <Button
                       onClick={clearFilters}
                       size="sm"
-                      className="text-red-600 hover:text-red-700 bg-red-50 hover:bg-red-100"
+                      variant="outline"
+                      className="text-[#FF3B30] hover:text-white hover:bg-[#FF3B30] border-[#FF3B30]"
                     >
                       <X className="w-4 h-4 mr-1" />
                       Clear ({activeFiltersCount})
@@ -373,7 +374,7 @@ export default function InventoryPage() {
               <div className="flex items-center gap-4">
                 <Button
                   onClick={() => setShowFilters(!showFilters)}
-                  className="lg:hidden bg-gradient-to-r from-blue-600 to-purple-600 text-white"
+                  className="lg:hidden bg-[#0A1F4D] hover:bg-[#0A1F4D]/90 text-white"
                 >
                   <Filter className="w-4 h-4 mr-2" />
                   Filters {activeFiltersCount > 0 && `(${activeFiltersCount})`}
@@ -404,14 +405,14 @@ export default function InventoryPage() {
                   <Button
                     onClick={() => setViewMode("grid")}
                     size="sm"
-                    className={`rounded-none ${viewMode === "grid" ? "bg-blue-600 text-white" : "bg-white text-slate-600"}`}
+                    className={`rounded-none ${viewMode === "grid" ? "bg-[#0A1F4D] text-white" : "bg-white text-slate-600"}`}
                   >
                     <Grid3X3 className="w-4 h-4" />
                   </Button>
                   <Button
                     onClick={() => setViewMode("list")}
                     size="sm"
-                    className={`rounded-none ${viewMode === "list" ? "bg-blue-600 text-white" : "bg-white text-slate-600"}`}
+                    className={`rounded-none ${viewMode === "list" ? "bg-[#0A1F4D] text-white" : "bg-white text-slate-600"}`}
                   >
                     <List className="w-4 h-4" />
                   </Button>
@@ -457,13 +458,13 @@ export default function InventoryPage() {
                           {/* Overlay Badges */}
                           <div className="absolute top-4 left-4 flex flex-col gap-2">
                             {car.isCertified && (
-                              <Badge className="bg-gradient-to-r from-green-500 to-emerald-500 text-white border-0 shadow-lg">
+                              <Badge className="bg-[#0A1F4D] text-white border-0 shadow-lg">
                                 <Shield className="h-3 w-3 mr-1" />
                                 Certified
                               </Badge>
                             )}
                             {car.daysOnLot <= 3 && (
-                              <Badge className="bg-gradient-to-r from-red-500 to-pink-500 text-white border-0 shadow-lg animate-pulse">
+                              <Badge className="bg-[#FF3B30] text-white border-0 shadow-lg animate-pulse">
                                 <Zap className="h-3 w-3 mr-1" />
                                 Hot Deal
                               </Badge>
@@ -476,8 +477,8 @@ export default function InventoryPage() {
                               size="sm"
                               className={`opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-full w-10 h-10 p-0 shadow-lg ${
                                 favorites.includes(car.id)
-                                  ? "bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600"
-                                  : "bg-white/90 hover:bg-white text-slate-800"
+                                  ? "bg-[#FF3B30] hover:bg-[#FF3B30]/90 text-white"
+                                  : "bg-white/90 hover:bg-white text-[#0A1F4D]"
                               }`}
                             >
                               <Heart
@@ -489,7 +490,7 @@ export default function InventoryPage() {
                           {/* Savings Badge */}
                           {car.savings > 0 && (
                             <div className="absolute bottom-4 left-4">
-                              <Badge className="bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold shadow-lg">
+                              <Badge className="bg-[#FF3B30] text-white font-bold shadow-lg">
                                 <Sparkles className="h-3 w-3 mr-1" />
                                 Save ${car.savings.toLocaleString()}
                               </Badge>
@@ -502,15 +503,15 @@ export default function InventoryPage() {
                             <h3 className="text-xl font-bold text-slate-800">
                               {car.year} {car.make} {car.model}
                             </h3>
-                            <div className="flex items-center gap-1 bg-gradient-to-r from-yellow-100 to-amber-100 rounded-full px-2 py-1">
-                              <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                              <span className="text-sm font-semibold text-amber-700">{car.rating}</span>
+                            <div className="flex items-center gap-1 bg-[#FF3B30]/10 rounded-full px-2 py-1">
+                              <Star className="h-4 w-4 fill-[#FF3B30] text-[#FF3B30]" />
+                              <span className="text-sm font-semibold text-[#FF3B30]">{car.rating}</span>
                             </div>
                           </div>
 
                           <div className="flex items-center justify-between mb-4">
                             <div>
-                              <div className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                              <div className="text-3xl font-bold bg-gradient-to-r from-[#0A1F4D] to-[#0A1F4D] bg-clip-text text-transparent">
                                 ${car.price.toLocaleString()}
                               </div>
                               {car.originalPrice > car.price && (
@@ -532,20 +533,20 @@ export default function InventoryPage() {
                               viewMode === "list" ? "grid-cols-4" : "grid-cols-2"
                             }`}
                           >
-                            <div className="flex items-center gap-2 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg p-2">
-                              <Fuel className="h-4 w-4 text-blue-600" />
+                            <div className="flex items-center gap-2 bg-[#0A1F4D]/5 rounded-lg p-2">
+                              <Fuel className="h-4 w-4 text-[#0A1F4D]" />
                               <span className="font-medium">{car.mpg}</span>
                             </div>
-                            <div className="flex items-center gap-2 bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg p-2">
-                              <Settings className="h-4 w-4 text-purple-600" />
+                            <div className="flex items-center gap-2 bg-[#0A1F4D]/5 rounded-lg p-2">
+                              <Settings className="h-4 w-4 text-[#0A1F4D]" />
                               <span className="font-medium">{car.transmission}</span>
                             </div>
-                            <div className="flex items-center gap-2 bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-2">
-                              <Gauge className="h-4 w-4 text-green-600" />
+                            <div className="flex items-center gap-2 bg-[#0A1F4D]/5 rounded-lg p-2">
+                              <Gauge className="h-4 w-4 text-[#0A1F4D]" />
                               <span className="font-medium">{car.drivetrain}</span>
                             </div>
-                            <div className="flex items-center gap-2 bg-gradient-to-r from-amber-50 to-orange-50 rounded-lg p-2">
-                              <Shield className="h-4 w-4 text-amber-600" />
+                            <div className="flex items-center gap-2 bg-[#0A1F4D]/5 rounded-lg p-2">
+                              <Shield className="h-4 w-4 text-[#0A1F4D]" />
                               <span className="font-medium">{car.condition}</span>
                             </div>
                           </div>
@@ -554,13 +555,13 @@ export default function InventoryPage() {
                             {car.features.slice(0, 3).map((feature, idx) => (
                               <Badge
                                 key={idx}
-                                className="bg-gradient-to-r from-slate-100 to-blue-100 text-slate-700 border-0"
+                                className="bg-[#0A1F4D]/5 text-[#0A1F4D] border-0 hover:bg-[#0A1F4D]/10"
                               >
                                 {feature}
                               </Badge>
                             ))}
                             {car.features.length > 3 && (
-                              <Badge className="bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 border-0">
+                              <Badge className="bg-[#0A1F4D]/10 text-[#0A1F4D] border-0 hover:bg-[#0A1F4D]/20">
                                 +{car.features.length - 3} more
                               </Badge>
                             )}
@@ -569,7 +570,7 @@ export default function InventoryPage() {
                           <div className="flex gap-2">
                             <Button
                               asChild
-                              className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg"
+                              className="flex-1 bg-[#0A1F4D] hover:bg-[#0A1F4D]/90 text-white shadow-lg"
                             >
                               <Link href={`/inventory/${car.id}`}>
                                 <Eye className="h-4 w-4 mr-2" />
@@ -584,12 +585,12 @@ export default function InventoryPage() {
                 </motion.div>
               ) : (
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center py-16">
-                  <div className="w-24 h-24 bg-gradient-to-br from-slate-200 to-blue-200 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Search className="w-12 h-12 text-slate-500" />
+                  <div className="w-24 h-24 bg-[#0A1F4D]/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <Search className="w-12 h-12 text-[#0A1F4D]" />
                   </div>
                   <h3 className="text-2xl font-bold text-slate-800 mb-4">No vehicles found</h3>
                   <p className="text-slate-600 mb-6">Try adjusting your search criteria or filters</p>
-                  <Button onClick={clearFilters} className="bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+                  <Button onClick={clearFilters} className="bg-[#0A1F4D] hover:bg-[#0A1F4D]/90 text-white">
                     Clear All Filters
                   </Button>
                 </motion.div>
@@ -613,8 +614,8 @@ export default function InventoryPage() {
                     onClick={() => setCurrentPage(page)}
                     className={`${
                       currentPage === page
-                        ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white"
-                        : "bg-white text-slate-700 border border-slate-300 hover:bg-slate-50"
+                        ? "bg-[#0A1F4D] text-white"
+                        : "bg-white text-[#0A1F4D] border border-slate-300 hover:bg-slate-50"
                     }`}
                   >
                     {page}

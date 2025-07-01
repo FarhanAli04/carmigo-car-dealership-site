@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Menu, X, Phone, MapPin } from "lucide-react"
 import Link from "next/link"
+import Image from 'next/image'
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -49,9 +50,7 @@ export function Header() {
 
       {/* Main Header */}
       <motion.header
-        className={`sticky top-0 z-50 transition-all duration-300 ${
-          isScrolled ? "bg-white shadow-lg" : "bg-white/95 backdrop-blur-sm"
-        }`}
+        className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? "bg-[#1E3A8A] shadow-lg" : "bg-[#1E3A8A]/95 backdrop-blur-sm"}`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6 }}
@@ -60,8 +59,14 @@ export function Header() {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-2">
-              <motion.div whileHover={{ scale: 1.05 }} className="text-2xl font-bold text-blue-900">
-                Carmigo
+              <motion.div whileHover={{ scale: 1.05 }} className="relative w-12 h-12">
+                <Image
+                  src="/logo.jpeg"
+                  alt="CARMIGGO Logo"
+                  width={48}
+                  height={48}
+                  className="object-contain"
+                />
               </motion.div>
             </Link>
 
@@ -71,17 +76,17 @@ export function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-gray-700 hover:text-blue-900 font-medium transition-colors duration-200 relative group"
+                  className="text-white hover:text-red-400 font-medium transition-colors duration-200 relative group"
                 >
                   {item.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-900 transition-all duration-200 group-hover:w-full"></span>
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-400 transition-all duration-200 group-hover:w-full"></span>
                 </Link>
               ))}
             </nav>
 
             {/* CTA Button */}
             <div className="hidden md:block">
-              <Button asChild className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold">
+              <Button asChild className="bg-red-500 hover:bg-red-600 text-white font-semibold">
                 <Link href="/inventory">Browse Cars</Link>
               </Button>
             </div>
@@ -107,13 +112,13 @@ export function Header() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="block text-gray-700 hover:text-blue-900 font-medium py-2"
+                    className="block text-white hover:text-red-400 font-medium py-2"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.label}
                   </Link>
                 ))}
-                <Button asChild className="w-full bg-yellow-500 hover:bg-yellow-600 text-black font-semibold">
+                <Button asChild className="w-full bg-red-500 hover:bg-red-600 text-white font-semibold">
                   <Link href="/inventory" onClick={() => setIsMenuOpen(false)}>
                     Browse Cars
                   </Link>

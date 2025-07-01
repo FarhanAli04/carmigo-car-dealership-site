@@ -13,41 +13,51 @@ const config: Config = {
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
-  			card: {
-  				DEFAULT: 'hsl(var(--card))',
-  				foreground: 'hsl(var(--card-foreground))'
-  			},
-  			popover: {
-  				DEFAULT: 'hsl(var(--popover))',
-  				foreground: 'hsl(var(--popover-foreground))'
-  			},
   			primary: {
-  				DEFAULT: 'hsl(var(--primary))',
-  				foreground: 'hsl(var(--primary-foreground))'
+  				DEFAULT: '#0A1F4D', // Dark Blue
+  				foreground: '#FFFFFF',
+  				50: '#E6E9F0',
+  				100: '#CCD4E1',
+  				200: '#99A9C3',
+  				300: '#667FA5',
+  				400: '#335487',
+  				500: '#0A1F4D',
+  				600: '#08193D',
+  				700: '#06132E',
+  				800: '#040C1F',
+  				900: '#02060F',
   			},
   			secondary: {
-  				DEFAULT: 'hsl(var(--secondary))',
-  				foreground: 'hsl(var(--secondary-foreground))'
-  			},
-  			muted: {
-  				DEFAULT: 'hsl(var(--muted))',
-  				foreground: 'hsl(var(--muted-foreground))'
+  				DEFAULT: '#1E3A8A', // Lighter Blue
+  				foreground: '#FFFFFF',
   			},
   			accent: {
-  				DEFAULT: 'hsl(var(--accent))',
-  				foreground: 'hsl(var(--accent-foreground))'
+  				DEFAULT: '#FF3B30', // Vibrant Red
+  				foreground: '#FFFFFF',
   			},
   			destructive: {
-  				DEFAULT: 'hsl(var(--destructive))',
-  				foreground: 'hsl(var(--destructive-foreground))'
+  				DEFAULT: '#EF4444',
+  				foreground: '#FFFFFF',
   			},
-  			border: 'hsl(var(--border))',
-  			input: 'hsl(var(--input))',
-  			ring: 'hsl(var(--ring))',
+  			muted: {
+  				DEFAULT: '#F1F5F9',
+  				foreground: '#64748B',
+  			},
+  			card: {
+  				DEFAULT: '#FFFFFF',
+  				foreground: '#0F172A',
+  			},
+  			popover: {
+  				DEFAULT: '#FFFFFF',
+  				foreground: '#0F172A',
+  			},
+  			border: 'hsl(214.3 31.8% 91.4%)',
+  			input: 'hsl(214.3 31.8% 91.4%)',
+  			ring: '#0A1F4D',
   			chart: {
-  				'1': 'hsl(var(--chart-1))',
-  				'2': 'hsl(var(--chart-2))',
-  				'3': 'hsl(var(--chart-3))',
+  				'1': '#0A1F4D',
+  				'2': '#1E3A8A',
+  				'3': '#3B82F6',
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
   			},

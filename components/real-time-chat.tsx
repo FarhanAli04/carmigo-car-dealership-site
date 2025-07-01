@@ -84,7 +84,7 @@ export function RealTimeChat() {
       >
         <Button
           onClick={() => setIsOpen(!isOpen)}
-          className="w-16 h-16 rounded-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 relative"
+          className="w-16 h-16 rounded-full bg-gradient-to-r from-[#FF3B30] to-[#E6352B] hover:from-[#E6352B] hover:to-[#CC2E26] shadow-2xl hover:shadow-red-500/25 transition-all duration-300 relative"
         >
           <AnimatePresence mode="wait">
             {isOpen ? (
@@ -127,11 +127,11 @@ export function RealTimeChat() {
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
           >
-            <Card className="bg-black/95 backdrop-blur-xl border-gray-700/50 shadow-2xl">
+            <Card className="bg-[#0A1F4D] backdrop-blur-xl border-[#1E3A8A]/50 shadow-2xl text-white">
               <CardHeader className="pb-3">
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between text-xs text-gray-300 p-3 border-t border-[#1E3A8A]">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center">
+                    <div className="w-10 h-10 rounded-full bg-[#FF3737] flex items-center justify-center">
                       <Bot className="h-5 w-5 text-white" />
                     </div>
                     <div>
@@ -142,7 +142,7 @@ export function RealTimeChat() {
                       </div>
                     </div>
                   </div>
-                  <Badge className="bg-green-500/20 text-green-400 border-green-500/30 text-xs">Live Chat</Badge>
+                  <Badge className="bg-[#FF3737]/20 text-white border-[#FF3737]/30 text-xs">Live Chat</Badge>
                 </div>
               </CardHeader>
 
@@ -161,7 +161,7 @@ export function RealTimeChat() {
                       >
                         <div
                           className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
-                            message.type === "user" ? "bg-blue-600" : "bg-gradient-to-r from-gray-600 to-gray-700"
+                            message.type === "user" ? "bg-[#FF3737]" : "bg-[#1E3A8A]"
                           }`}
                         >
                           {message.type === "user" ? (
@@ -172,7 +172,7 @@ export function RealTimeChat() {
                         </div>
                         <div
                           className={`rounded-2xl px-4 py-2 ${
-                            message.type === "user" ? "bg-blue-600 text-white" : "bg-gray-800 text-gray-200"
+                            message.type === "user" ? "bg-[#FF3737] text-white" : "bg-[#1E3A8A] text-white"
                           }`}
                         >
                           <p className="text-sm">{message.message}</p>
@@ -192,20 +192,14 @@ export function RealTimeChat() {
                       className="flex justify-start"
                     >
                       <div className="flex items-start gap-2">
-                        <div className="w-8 h-8 rounded-full bg-gradient-to-r from-gray-600 to-gray-700 flex items-center justify-center">
+                        <div className="w-8 h-8 rounded-full bg-[#1E3A8A] flex items-center justify-center">
                           <Bot className="h-4 w-4 text-white" />
                         </div>
-                        <div className="bg-gray-800 rounded-2xl px-4 py-2">
+                        <div className="bg-[#1E3A8A] rounded-2xl px-4 py-2">
                           <div className="flex space-x-1">
-                            <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" />
-                            <div
-                              className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
-                              style={{ animationDelay: "0.1s" }}
-                            />
-                            <div
-                              className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
-                              style={{ animationDelay: "0.2s" }}
-                            />
+                            <div className="w-2 h-2 bg-[#FF3737] rounded-full animate-bounce" style={{ animationDelay: '0.2s' }} />
+                            <div className="w-2 h-2 bg-[#FF3737] rounded-full animate-bounce" style={{ animationDelay: '0.4s' }} />
+                            <div className="w-2 h-2 bg-[#FF3737] rounded-full animate-bounce" style={{ animationDelay: '0.6s' }} />
                           </div>
                         </div>
                       </div>
@@ -237,16 +231,17 @@ export function RealTimeChat() {
                   {/* Message Input */}
                   <div className="flex gap-2">
                     <Input
+                      type="text"
                       placeholder="Type your message..."
+                      className="flex-1 bg-[#1E3A8A] border-[#0A1F4D] text-white placeholder-gray-300 focus:ring-2 focus:ring-[#FF3737] focus:border-transparent"
                       value={newMessage}
                       onChange={(e) => setNewMessage(e.target.value)}
-                      onKeyPress={(e) => e.key === "Enter" && handleSendMessage()}
-                      className="bg-gray-800/50 border-gray-600 text-white placeholder:text-gray-400 text-sm"
+                      onKeyDown={(e) => e.key === 'Enter' && handleSendMessage()}
                     />
                     <Button
                       onClick={handleSendMessage}
                       size="sm"
-                      className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700"
+                      className="bg-[#FF3737] hover:bg-[#FF3737]"
                     >
                       <Send className="h-4 w-4" />
                     </Button>

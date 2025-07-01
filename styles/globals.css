@@ -14,73 +14,112 @@ body {
 
 @layer base {
   :root {
+    /* Base Colors */
     --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
+    --foreground: 222 47% 11%;
+    
+    /* Card & Surface Colors */
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
+    --card-foreground: 210 40% 10%;
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
+    --popover-foreground: 222 47% 11%;
+    
+    /* Primary Colors - Dark Blue */
+    --primary: 220 56% 20%;  /* Dark Blue */
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary Colors - Vibrant Red */
+    --secondary: 3 100% 60%;  /* Vibrant Red */
+    --secondary-foreground: 0 0% 100%;
+    
+    /* Muted Colors */
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    
+    /* Accent Colors - Vibrant Red */
+    --accent: 3 100% 60%;  /* Vibrant Red */
+    --accent-foreground: 0 0% 100%;
+    
+    /* Destructive - Slightly Darker Red */
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* UI Colors */
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 3 100% 60%;  /* Vibrant Red */
+    
+    /* Chart Colors */
+    --chart-1: 220 56% 20%;  /* Dark Blue */
+    --chart-2: 3 100% 60%;   /* Vibrant Red */
+    --chart-3: 220 56% 30%;  /* Slightly Lighter Blue */
+    --chart-4: 3 100% 50%;   /* Brighter Red */
+    --chart-5: 0 0% 100%;    /* White */
     --radius: 0.5rem;
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-  .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    
+    /* Sidebar Colors */
+    --sidebar-background: 220 56% 20%;  /* Dark Blue */
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 3 100% 60%;     /* Vibrant Red */
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 220 56% 15%;     /* Darker Blue */
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 220 56% 25%;
+    --sidebar-ring: 3 100% 60%;        /* Vibrant Red */
+  }
+
+  .dark {
+    /* Base Colors */
+    --background: 220 56% 10%;  /* Very Dark Blue */
+    --foreground: 0 0% 95%;
+    
+    /* Card & Surface Colors */
+    --card: 220 56% 12%;  /* Slightly Lighter than Background */
+    --card-foreground: 0 0% 95%;
+    --popover: 220 56% 12%;  /* Same as Card */
+    --popover-foreground: 0 0% 95%;
+    
+    /* Primary Colors - Lighter Blue for Dark Mode */
+    --primary: 220 56% 30%;  /* Lighter Blue */
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary Colors - Brighter Red for Dark Mode */
+    --secondary: 3 100% 65%;  /* Brighter Red */
+    --secondary-foreground: 0 0% 100%;
+    
+    /* Muted Colors */
+    --muted: 220 56% 15%;  /* Slightly Lighter than Background */
+    --muted-foreground: 0 0% 80%;
+    
+    /* Accent Colors - Brighter Red */
+    --accent: 3 100% 65%;  /* Brighter Red */
+    --accent-foreground: 0 0% 100%;
+    
+    /* Destructive - Bright Red */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* UI Colors */
+    --border: 220 56% 20%;  /* Slightly Lighter than Background */
+    --input: 220 56% 20%;
+    --ring: 3 100% 65%;  /* Brighter Red */
+    
+    /* Chart Colors */
+    --chart-1: 220 56% 30%;  /* Lighter Blue */
+    --chart-2: 3 100% 65%;   /* Brighter Red */
+    --chart-3: 220 56% 40%;  /* Even Lighter Blue */
+    --chart-4: 3 100% 55%;   /* Slightly Darker Red */
+    --chart-5: 0 0% 100%;    /* White */
+    
+    /* Sidebar Colors */
+    --sidebar-background: 220 56% 15%;  /* Slightly Lighter than Background */
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 3 100% 65%;     /* Brighter Red */
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 56% 20%;     /* Slightly Lighter */
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 220 56% 25%;
+    --sidebar-ring: 3 100% 65%;        /* Brighter Red */
   }
 }
 
@@ -90,5 +129,90 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+  }
+  
+  /* Button Styles */
+  .btn {
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background;
+  }
+  
+  /* Primary Button - Dark Blue */
+  .btn-primary {
+    @apply bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] hover:bg-[hsl(var(--primary)/0.9)] shadow-md hover:shadow-lg transform hover:scale-[1.02] active:scale-95;
+  }
+  
+  /* Secondary Button - Vibrant Red */
+  .btn-secondary {
+    @apply bg-[hsl(var(--accent))] text-[hsl(var(--accent-foreground))] hover:bg-[hsl(var(--accent)/0.9)] border border-transparent hover:border-white/20 shadow-md hover:shadow-lg;
+  }
+  
+  /* Outline Button - Red Outline */
+  .btn-outline {
+    @apply bg-transparent border border-[hsl(var(--accent))] text-[hsl(var(--accent))] hover:bg-[hsl(var(--accent)/0.1)] hover:border-[hsl(var(--accent))] shadow-sm;
+  }
+  
+  /* Ghost Button - For less prominent actions */
+  .btn-ghost {
+    @apply bg-transparent hover:bg-[hsl(var(--muted))] text-[hsl(var(--foreground))];
+  }
+  
+  /* Link Button - For text links that look like buttons */
+  .btn-link {
+    @apply text-[hsl(var(--accent))] hover:underline underline-offset-4;
+  }
+  
+  /* Section Styles */
+  .section {
+    @apply py-16 md:py-24;
+  }
+  
+  .section-light {
+    @apply bg-[hsl(var(--muted))];
+  }
+  
+  .section-dark {
+    @apply bg-[hsl(var(--secondary))] text-white;
+  }
+  
+  .section-accent {
+    @apply bg-gradient-to-r from-[hsl(var(--accent)/0.1)] to-[hsl(var(--primary)/0.1)];
+  }
+  
+  /* Card Styles */
+  .card {
+    @apply bg-card text-card-foreground rounded-lg border border-border overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-200;
+  }
+  
+  .card-header {
+    @apply p-6 pb-0;
+  }
+  
+  .card-title {
+    @apply text-xl font-semibold;
+  }
+  
+  .card-description {
+    @apply text-muted-foreground text-sm mt-1;
+  }
+  
+  .card-content {
+    @apply p-6 pt-4;
+  }
+  
+  .card-footer {
+    @apply p-6 pt-0;
+  }
+  
+  /* Alert Styles */
+  .alert {
+    @apply p-4 rounded-md border border-border;
+  }
+  
+  .alert-destructive {
+    @apply bg-destructive/10 border-destructive/20 text-destructive;
+  }
+  
+  .alert-success {
+    @apply bg-green-50 border-green-200 text-green-800 dark:bg-green-900/20 dark:border-green-800 dark:text-green-200;
   }
 }
