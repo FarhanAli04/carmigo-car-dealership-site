@@ -28,17 +28,17 @@ body {
     --primary: 220 56% 20%;  /* Dark Blue */
     --primary-foreground: 0 0% 100%;
     
-    /* Secondary Colors - Vibrant Red */
-    --secondary: 3 100% 60%;  /* Vibrant Red */
-    --secondary-foreground: 0 0% 100%;
+    /* Secondary Colors - Silver */
+    --secondary: 0 0% 75%;  /* Silver */
+    --secondary-foreground: 0 0% 20%;
     
     /* Muted Colors */
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
     
-    /* Accent Colors - Vibrant Red */
-    --accent: 3 100% 60%;  /* Vibrant Red */
-    --accent-foreground: 0 0% 100%;
+    /* Accent Colors - Silver */
+    --accent: 0 0% 75%;  /* Silver */
+    --accent-foreground: 0 0% 20%;
     
     /* Destructive - Slightly Darker Red */
     --destructive: 0 84.2% 60.2%;
@@ -47,25 +47,25 @@ body {
     /* UI Colors */
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 3 100% 60%;  /* Vibrant Red */
+    --ring: 0 0% 75%;  /* Silver */
     
     /* Chart Colors */
     --chart-1: 220 56% 20%;  /* Dark Blue */
-    --chart-2: 3 100% 60%;   /* Vibrant Red */
+    --chart-2: 0 0% 75%;   /* Silver */
     --chart-3: 220 56% 30%;  /* Slightly Lighter Blue */
-    --chart-4: 3 100% 50%;   /* Brighter Red */
+    --chart-4: 0 0% 65%;   /* Slightly Darker Silver */
     --chart-5: 0 0% 100%;    /* White */
     --radius: 0.5rem;
     
     /* Sidebar Colors */
     --sidebar-background: 220 56% 20%;  /* Dark Blue */
     --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 3 100% 60%;     /* Vibrant Red */
+    --sidebar-primary: 0 0% 75%;     /* Silver */
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 220 56% 15%;     /* Darker Blue */
     --sidebar-accent-foreground: 0 0% 100%;
     --sidebar-border: 220 56% 25%;
-    --sidebar-ring: 3 100% 60%;        /* Vibrant Red */
+    --sidebar-ring: 0 0% 75%;        /* Silver */
   }
 
   .dark {
@@ -83,17 +83,17 @@ body {
     --primary: 220 56% 30%;  /* Lighter Blue */
     --primary-foreground: 0 0% 100%;
     
-    /* Secondary Colors - Brighter Red for Dark Mode */
-    --secondary: 3 100% 65%;  /* Brighter Red */
-    --secondary-foreground: 0 0% 100%;
+    /* Secondary Colors - Silver for Dark Mode */
+    --secondary: 0 0% 65%;  /* Silver */
+    --secondary-foreground: 0 0% 20%;
     
     /* Muted Colors */
     --muted: 220 56% 15%;  /* Slightly Lighter than Background */
     --muted-foreground: 0 0% 80%;
     
-    /* Accent Colors - Brighter Red */
-    --accent: 3 100% 65%;  /* Brighter Red */
-    --accent-foreground: 0 0% 100%;
+    /* Accent Colors - Silver */
+    --accent: 0 0% 65%;  /* Silver */
+    --accent-foreground: 0 0% 20%;
     
     /* Destructive - Bright Red */
     --destructive: 0 84.2% 60.2%;
@@ -102,24 +102,24 @@ body {
     /* UI Colors */
     --border: 220 56% 20%;  /* Slightly Lighter than Background */
     --input: 220 56% 20%;
-    --ring: 3 100% 65%;  /* Brighter Red */
+    --ring: 0 0% 65%;  /* Silver */
     
     /* Chart Colors */
     --chart-1: 220 56% 30%;  /* Lighter Blue */
-    --chart-2: 3 100% 65%;   /* Brighter Red */
+    --chart-2: 0 0% 65%;   /* Silver */
     --chart-3: 220 56% 40%;  /* Even Lighter Blue */
-    --chart-4: 3 100% 55%;   /* Slightly Darker Red */
+    --chart-4: 0 0% 55%;   /* Darker Silver */
     --chart-5: 0 0% 100%;    /* White */
     
     /* Sidebar Colors */
     --sidebar-background: 220 56% 15%;  /* Slightly Lighter than Background */
     --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 3 100% 65%;     /* Brighter Red */
+    --sidebar-primary: 0 0% 65%;     /* Silver */
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 220 56% 20%;     /* Slightly Lighter */
     --sidebar-accent-foreground: 0 0% 100%;
     --sidebar-border: 220 56% 25%;
-    --sidebar-ring: 3 100% 65%;        /* Brighter Red */
+    --sidebar-ring: 0 0% 65%;        /* Silver */
   }
 }
 
@@ -141,12 +141,12 @@ body {
     @apply bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] hover:bg-[hsl(var(--primary)/0.9)] shadow-md hover:shadow-lg transform hover:scale-[1.02] active:scale-95;
   }
   
-  /* Secondary Button - Vibrant Red */
+  /* Secondary Button - Silver */
   .btn-secondary {
-    @apply bg-[hsl(var(--accent))] text-[hsl(var(--accent-foreground))] hover:bg-[hsl(var(--accent)/0.9)] border border-transparent hover:border-white/20 shadow-md hover:shadow-lg;
+    @apply bg-[hsl(var(--accent))] text-[hsl(var(--accent-foreground))] hover:bg-[hsl(var(--accent)/0.9)] border border-transparent hover:border-gray-600/20 shadow-md hover:shadow-lg;
   }
   
-  /* Outline Button - Red Outline */
+  /* Outline Button - Silver Outline */
   .btn-outline {
     @apply bg-transparent border border-[hsl(var(--accent))] text-[hsl(var(--accent))] hover:bg-[hsl(var(--accent)/0.1)] hover:border-[hsl(var(--accent))] shadow-sm;
   }

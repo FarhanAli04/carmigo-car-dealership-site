@@ -32,8 +32,8 @@ const config: Config = {
   				foreground: '#FFFFFF',
   			},
   			accent: {
-  				DEFAULT: '#FF3B30', // Vibrant Red
-  				foreground: '#FFFFFF',
+  				DEFAULT: '#C0C0C0', // Silver
+  				foreground: '#000000',
   			},
   			destructive: {
   				DEFAULT: '#EF4444',

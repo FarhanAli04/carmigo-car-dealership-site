@@ -33,9 +33,9 @@ export function FinancingOptions() {
         "Premium vehicle access",
       ],
       badge: "Best Rate",
-      badgeColor: "from-green-500 to-emerald-500",
+      badgeColor: "from-[#0A1F4D] to-[#0A1F4D]/90",
       icon: Award,
-      gradient: "from-green-50 to-emerald-50",
+      gradient: "from-[#0A1F4D]/5 to-[#C0C0C0]/10",
     },
     {
       title: "Good Credit",
@@ -49,9 +49,9 @@ export function FinancingOptions() {
         "Wide vehicle selection",
       ],
       badge: "Popular",
-      badgeColor: "from-blue-500 to-cyan-500",
+      badgeColor: "from-[#0A1F4D] to-[#0A1F4D]/80",
       icon: TrendingUp,
-      gradient: "from-blue-50 to-cyan-50",
+      gradient: "from-[#0A1F4D]/5 to-[#C0C0C0]/10",
     },
     {
       title: "Building Credit",
@@ -65,9 +65,9 @@ export function FinancingOptions() {
         "Credit improvement tips",
       ],
       badge: "Most Flexible",
-      badgeColor: "from-purple-500 to-pink-500",
+      badgeColor: "from-[#0A1F4D] to-[#0A1F4D]/70",
       icon: Users,
-      gradient: "from-purple-50 to-pink-50",
+      gradient: "from-[#0A1F4D]/5 to-[#C0C0C0]/10",
     },
     {
       title: "Fresh Start",
@@ -81,9 +81,9 @@ export function FinancingOptions() {
         "Dedicated support team",
       ],
       badge: "All Welcome",
-      badgeColor: "from-orange-500 to-red-500",
+      badgeColor: "from-[#0A1F4D] to-[#0A1F4D]/60",
       icon: Shield,
-      gradient: "from-orange-50 to-red-50",
+      gradient: "from-[#0A1F4D]/5 to-[#C0C0C0]/10",
     },
   ]
 
@@ -92,25 +92,25 @@ export function FinancingOptions() {
       icon: Clock,
       title: "60-Second Pre-Approval",
       description: "Get instant decisions with our advanced AI-powered approval system",
-      gradient: "from-blue-50 to-cyan-50",
+      gradient: "from-[#0A1F4D]/10 to-[#C0C0C0]/20",
     },
     {
       icon: DollarSign,
       title: "Competitive Rates",
       description: "We work with 20+ lenders to find you the best possible rate",
-      gradient: "from-green-50 to-emerald-50",
+      gradient: "from-[#0A1F4D]/10 to-[#C0C0C0]/20",
     },
     {
       icon: Shield,
       title: "Secure Process",
       description: "Bank-level encryption protects your personal information",
-      gradient: "from-purple-50 to-pink-50",
+      gradient: "from-[#0A1F4D]/10 to-[#C0C0C0]/20",
     },
     {
       icon: Users,
       title: "Expert Guidance",
       description: "Our finance specialists help you every step of the way",
-      gradient: "from-amber-50 to-orange-50",
+      gradient: "from-[#0A1F4D]/10 to-[#C0C0C0]/20",
     },
   ]
 
@@ -128,20 +128,20 @@ export function FinancingOptions() {
   return (
     <section className="section-padding relative overflow-hidden">
       {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 to-purple-50/30" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0A1F4D]/10 to-[#C0C0C0]/10" />
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-20 left-20 w-32 h-32 bg-green-400 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 right-20 w-40 h-40 bg-blue-400 rounded-full blur-3xl animate-pulse delay-1000" />
+        <div className="absolute top-20 left-20 w-32 h-32 bg-[#0A1F4D]/30 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-20 right-20 w-40 h-40 bg-[#C0C0C0]/20 rounded-full blur-3xl animate-pulse delay-1000" />
       </div>
 
       <div className="container-custom relative z-10">
         <div className="text-center mb-16">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-green-100 to-emerald-100 rounded-full px-4 py-2 mb-4">
-              <DollarSign className="w-4 h-4 text-green-600" />
-              <span className="text-green-700 font-medium text-sm">Financing Solutions</span>
+            <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-[#0A1F4D]/10 to-[#C0C0C0]/20 rounded-full px-4 py-2 mb-4">
+              <DollarSign className="w-4 h-4 text-[#0A1F4D]" />
+              <span className="text-[#0A1F4D] font-medium text-sm">Financing Solutions</span>
             </div>
-            <h2 className="text-heading mb-4 bg-gradient-to-r from-slate-800 to-green-600 bg-clip-text text-transparent">
+            <h2 className="text-heading mb-4 bg-gradient-to-r from-[#0A1F4D] to-[#C0C0C0] bg-clip-text text-transparent">
               Financing Made Simple
             </h2>
             <p className="text-slate-600 text-lg max-w-2xl mx-auto">
@@ -189,7 +189,7 @@ export function FinancingOptions() {
                 <div className={`absolute inset-0 bg-gradient-to-br ${plan.gradient} opacity-50`} />
                 <CardHeader className="text-center pb-4 relative z-10">
                   <div className="flex justify-between items-start mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-slate-700 to-slate-800 rounded-xl flex items-center justify-center shadow-lg">
+                    <div className="w-12 h-12 bg-gradient-to-br from-[#0A1F4D] to-[#0A1F4D]/90 rounded-xl flex items-center justify-center shadow-lg">
                       <plan.icon className="h-6 w-6 text-white" />
                     </div>
                     <Badge className={`bg-gradient-to-r ${plan.badgeColor} text-white border-0 shadow-lg`}>
@@ -198,9 +198,9 @@ export function FinancingOptions() {
                   </div>
                   <CardTitle className="text-xl text-slate-800">{plan.title}</CardTitle>
                   <p className="text-slate-600 text-sm">{plan.subtitle}</p>
-                  <div className="text-4xl font-bold bg-gradient-to-r from-slate-800 to-blue-600 bg-clip-text text-transparent mt-3">
+                  <div className="text-4xl font-bold bg-gradient-to-r from-[#0A1F4D] to-[#C0C0C0] bg-clip-text text-transparent mt-3">
                     {plan.apr}
-                    <span className="text-sm text-slate-500 font-normal"> APR*</span>
+                    <span className="text-sm text-[#0A1F4D]/70 font-normal"> APR*</span>
                   </div>
                 </CardHeader>
                 <CardContent className="pt-0 relative z-10">
@@ -208,13 +208,13 @@ export function FinancingOptions() {
                     {plan.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center gap-2 text-sm">
                         <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
-                        <span className="text-slate-700">{feature}</span>
+                        <span className="text-[#0A1F4D]">{feature}</span>
                       </li>
                     ))}
                   </ul>
                   <Button
                     asChild
-                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg"
+                    className="w-full bg-gradient-to-r from-[#0A1F4D] to-[#0A1F4D]/90 hover:from-[#0A1F4D]/90 hover:to-[#0A1F4D] text-white shadow-lg transition-colors duration-300"
                   >
                     <Link href="/financing">
                       <Zap className="h-4 w-4 mr-2" />
@@ -232,13 +232,13 @@ export function FinancingOptions() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="bg-white/80 backdrop-blur-xl rounded-3xl p-8 text-center shadow-2xl border-0"
+          className="bg-white/90 backdrop-blur-xl rounded-3xl p-8 text-center shadow-2xl border border-[#C0C0C0]/30"
         >
-          <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+          <div className="w-16 h-16 bg-gradient-to-br from-[#0A1F4D] to-[#0A1F4D]/90 rounded-2xl flex items-center justify-center mx-auto mb-6">
             <Sparkles className="w-8 h-8 text-white" />
           </div>
-          <h3 className="text-3xl font-bold text-slate-800 mb-4">Our Lender Network</h3>
-          <p className="text-slate-600 mb-8 max-w-2xl mx-auto text-lg">
+          <h3 className="text-3xl font-bold text-[#0A1F4D] mb-4">Our Lender Network</h3>
+          <p className="text-[#0A1F4D]/80 mb-8 max-w-2xl mx-auto text-lg">
             We partner with 20+ trusted financial institutions to ensure you get the best possible rate and terms
           </p>
 
@@ -249,9 +249,9 @@ export function FinancingOptions() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-gradient-to-r from-slate-50 to-blue-50 rounded-xl p-4 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                className="bg-gradient-to-r from-[#0A1F4D]/5 to-[#C0C0C0]/10 rounded-xl p-4 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-[#C0C0C0]/20"
               >
-                <span className="text-slate-700 font-semibold text-sm">{lender}</span>
+                <span className="text-[#0A1F4D] font-semibold text-sm">{lender}</span>
               </motion.div>
             ))}
           </div>
@@ -260,7 +260,7 @@ export function FinancingOptions() {
             <Button
               asChild
               size="lg"
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-xl"
+              className="bg-gradient-to-r from-[#0A1F4D] to-[#0A1F4D]/90 hover:from-[#0A1F4D]/90 hover:to-[#0A1F4D] text-white shadow-xl transition-colors duration-300"
             >
               <Link href="/financing">
                 <Calculator className="h-5 w-5 mr-2" />
@@ -270,7 +270,7 @@ export function FinancingOptions() {
             <Button
               asChild
               size="lg"
-              className="bg-gradient-to-r from-slate-100 to-blue-100 hover:from-slate-200 hover:to-blue-200 text-slate-700 shadow-xl"
+              className="bg-gradient-to-r from-[#C0C0C0]/20 to-[#C0C0C0]/40 hover:from-[#C0C0C0]/30 hover:to-[#C0C0C0]/50 text-[#0A1F4D] shadow-xl transition-colors duration-300"
             >
               <Link href="/contact">
                 <CreditCard className="h-5 w-5 mr-2" />
@@ -279,7 +279,7 @@ export function FinancingOptions() {
             </Button>
           </div>
 
-          <p className="text-xs text-slate-500 mt-6">
+          <p className="text-xs text-[#0A1F4D]/70 mt-6">
             * APR (Annual Percentage Rate) varies based on creditworthiness, loan term, and other factors. Rates shown
             are for qualified buyers and subject to credit approval.
           </p>

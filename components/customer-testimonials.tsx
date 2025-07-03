@@ -89,21 +89,21 @@ export function CustomerTestimonials() {
   ]
 
   return (
-    <section className="section-padding bg-gradient-to-br from-slate-50 to-blue-50/30 relative overflow-hidden">
+    <section className="section-padding bg-gradient-to-br from-gray-50 to-primary-50/30 relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-20 left-20 w-32 h-32 bg-purple-400 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 right-20 w-40 h-40 bg-blue-400 rounded-full blur-3xl animate-pulse delay-1000" />
+        <div className="absolute top-20 left-20 w-32 h-32 bg-secondary-400 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-20 right-20 w-40 h-40 bg-primary-400 rounded-full blur-3xl animate-pulse delay-1000" />
       </div>
 
       <div className="container-custom relative z-10">
         <div className="text-center mb-16">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-100 to-pink-100 rounded-full px-4 py-2 mb-4">
-              <Users className="w-4 h-4 text-purple-600" />
-              <span className="text-purple-700 font-medium text-sm">Customer Stories</span>
+            <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-secondary-100 to-pink-100 rounded-full px-4 py-2 mb-4">
+              <Users className="w-4 h-4 text-secondary-600" />
+              <span className="text-secondary-700 font-medium text-sm">Customer Stories</span>
             </div>
-            <h2 className="text-heading mb-4 bg-gradient-to-r from-slate-800 to-purple-600 bg-clip-text text-transparent">
+            <h2 className="text-heading mb-4 bg-gradient-to-r from-gray-900 to-secondary-600 bg-clip-text text-transparent">
               What Our Customers Say
             </h2>
             <p className="text-slate-600 text-lg max-w-2xl mx-auto">
@@ -144,7 +144,7 @@ export function CustomerTestimonials() {
                           height={50}
                           className="rounded-full object-cover ring-2 ring-blue-200"
                         />
-                        <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
+                        <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full flex items-center justify-center">
                           <CheckCircle className="w-3 h-3 text-white" />
                         </div>
                       </div>
@@ -155,7 +155,7 @@ export function CustomerTestimonials() {
                       </div>
                     </div>
                     {testimonial.verified && (
-                      <Badge className="bg-gradient-to-r from-green-100 to-emerald-100 text-green-700 border-green-200">
+                      <Badge className="bg-gradient-to-r from-success-100 to-success-50 text-success-700 border-success-200">
                         <CheckCircle className="h-3 w-3 mr-1" />
                         Verified
                       </Badge>
@@ -174,11 +174,11 @@ export function CustomerTestimonials() {
                   </div>
 
                   <div className="border-t border-slate-200 pt-4">
-                    <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-3">
+                    <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-lg p-3">
                       <div className="text-sm text-slate-600">
                         <span className="font-semibold">Vehicle Purchased:</span>
                         <br />
-                        <span className="text-blue-600 font-medium">{testimonial.vehiclePurchased}</span>
+                        <span className="text-primary-600 font-medium">{testimonial.vehiclePurchased}</span>
                       </div>
                     </div>
                   </div>
@@ -195,7 +195,7 @@ export function CustomerTestimonials() {
           className="text-center mt-12"
         >
           <div className="bg-white/80 backdrop-blur-xl rounded-2xl p-8 max-w-2xl mx-auto shadow-xl border-0">
-            <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+            <div className="w-16 h-16 bg-gradient-to-br from-primary-600 to-secondary-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
               <Sparkles className="w-8 h-8 text-white" />
             </div>
             <h3 className="text-2xl font-bold text-slate-800 mb-4">Join Our Happy Customers</h3>
@@ -207,7 +207,7 @@ export function CustomerTestimonials() {
                 href="https://www.google.com/maps"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-3 rounded-xl font-semibold shadow-lg transition-all duration-300 inline-flex items-center justify-center"
+                className="bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-700 hover:to-secondary-700 text-white font-semibold px-6 py-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 <Star className="w-4 h-4 mr-2" />
                 Leave a Google Review

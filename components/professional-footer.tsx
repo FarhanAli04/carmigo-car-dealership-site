@@ -125,7 +125,7 @@ export default function ProfessionalFooter() {
               </a>
               <a
                 href="#"
-                className="w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center hover:from-red-400 hover:to-red-500 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+                className="w-12 h-12 bg-gradient-to-br from-silver-500 to-silver-600 rounded-xl flex items-center justify-center hover:from-silver-400 hover:to-silver-500 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
               >
                 <Youtube className="w-5 h-5" />
               </a>

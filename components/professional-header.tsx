@@ -60,21 +60,21 @@ export default function ProfessionalHeader() {
 
   return (
     <>
-      {/* Top Bar - Red */}
-      <div className="bg-[#FF3B30] text-white py-2">
+      {/* Top Bar - Silver */}
+      <div className="bg-[#C0C0C0] text-gray-900 py-2">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center text-sm">
             <div className="flex items-center space-x-6">
-              <div className="flex items-center hover:text-gray-100 transition-colors">
+              <div className="flex items-center hover:text-gray-800 transition-colors">
                 <Phone className="h-4 w-4 mr-2" />
                 <span>(123) 456-7890</span>
               </div>
-              <div className="hidden md:flex items-center hover:text-gray-100 transition-colors">
+              <div className="hidden md:flex items-center hover:text-gray-800 transition-colors">
                 <MapPin className="h-4 w-4 mr-2" />
                 <span>123 Car Street, Autocity</span>
               </div>
             </div>
-            <div className="flex items-center hover:text-gray-100 transition-colors">
+            <div className="flex items-center hover:text-gray-800 transition-colors">
               <Clock className="h-4 w-4 mr-2" />
               <span>Mon-Fri: 9:00 AM - 7:00 PM</span>
             </div>
@@ -110,7 +110,7 @@ export default function ProfessionalHeader() {
                     <button
                       onMouseEnter={() => setActiveDropdown(item.name)}
                       onMouseLeave={() => setActiveDropdown(null)}
-                      className="flex items-center space-x-1 text-white hover:text-[#FF3B30] px-4 py-2 text-sm font-medium transition-colors duration-200 rounded-md hover:bg-white/10"
+                      className="flex items-center space-x-1 text-white hover:text-[#C0C0C0] px-4 py-2 text-sm font-medium transition-colors duration-200 rounded-md hover:bg-[#0A1F4D] hover:bg-opacity-90"
                     >
                       <span>{item.name}</span>
                       <ChevronDown className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" />
@@ -123,7 +123,7 @@ export default function ProfessionalHeader() {
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: 10 }}
                           transition={{ duration: 0.2 }}
-                          className="absolute left-0 mt-1 w-56 origin-top-left bg-white rounded-lg shadow-xl ring-1 ring-black/5 z-50 overflow-hidden"
+                          className="absolute left-0 mt-1 w-56 origin-top-left bg-[#0A1F4D] bg-opacity-95 rounded-lg shadow-xl ring-1 ring-white/10 z-50 overflow-hidden backdrop-blur-sm"
                           onMouseEnter={() => setActiveDropdown(item.name)}
                           onMouseLeave={() => setActiveDropdown(null)}
                         >
@@ -132,13 +132,13 @@ export default function ProfessionalHeader() {
                               <Link
                                 key={dropdownItem.name}
                                 href={dropdownItem.href}
-                                className="flex items-center px-4 py-3 text-sm text-gray-800 hover:bg-[#FF3B30] hover:text-white transition-colors duration-200"
+                                className="flex items-center px-4 py-3 text-sm text-white/90 hover:bg-white/10 hover:text-white transition-colors duration-200"
                                 onClick={() => {
                                   setIsMenuOpen(false)
                                   setActiveDropdown(null)
                                 }}
                               >
-                                <dropdownItem.icon className="w-4 h-4 mr-3 text-[#0A1F4D] group-hover:text-white" />
+                                <dropdownItem.icon className="w-4 h-4 mr-3 text-white/70 group-hover:text-white" />
                                 {dropdownItem.name}
                               </Link>
                             ))}
@@ -151,7 +151,7 @@ export default function ProfessionalHeader() {
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="text-white hover:text-[#FF3B30] px-3 py-2 text-sm font-medium transition-colors duration-200"
+                    className="text-white hover:text-[#C0C0C0] px-3 py-2 text-sm font-medium transition-colors duration-200"
                   >
                     {item.name}
                   </Link>
@@ -163,13 +163,13 @@ export default function ProfessionalHeader() {
             <div className="hidden lg:flex items-center space-x-4">
               <Link
                 href="/inventory"
-                className="px-4 py-2 text-sm font-medium text-white hover:text-[#FF3B30] transition-colors duration-200 border border-transparent hover:border-white/20 rounded-md"
+                className="px-4 py-2 text-sm font-medium text-white hover:text-[#C0C0C0] transition-colors duration-200 border border-transparent hover:border-[#C0C0C0]/50 rounded-md"
               >
                 Browse Inventory
               </Link>
               <Link
                 href="/financing"
-                className="px-6 py-2.5 text-sm font-medium text-white bg-[#FF3B30] hover:bg-[#E6352B] rounded-md transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-[1.02] transform"
+                className="px-6 py-2.5 text-sm font-medium text-gray-900 bg-[#C0C0C0] hover:bg-[#D3D3D3] rounded-md transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-[1.02] transform"
               >
                 Get Pre-Approved
               </Link>
@@ -179,7 +179,7 @@ export default function ProfessionalHeader() {
             <div className="lg:hidden">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-[#FF3B30] hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/50 transition-colors duration-200"
+                className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-[#C0C0C0] hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/50 transition-colors duration-200"
                 aria-expanded="false"
               >
                 <span className="sr-only">Open main menu</span>
@@ -229,7 +229,7 @@ export default function ProfessionalHeader() {
                               <Link
                                 key={dropdownItem.name}
                                 href={dropdownItem.href}
-                                className="flex items-center px-4 py-3 text-sm text-white/90 hover:bg-[#FF3B30] hover:text-white transition-colors duration-200"
+                                className="flex items-center px-4 py-3 text-sm text-white/90 hover:bg-[#C0C0C0] hover:text-gray-900 transition-colors duration-200"
                                 onClick={() => {
                                   setIsMenuOpen(false)
                                   setActiveDropdown(null)
@@ -245,7 +245,7 @@ export default function ProfessionalHeader() {
                     ) : (
                       <Link
                         href={item.href}
-                        className="block px-4 py-3 text-sm font-medium text-white/90 hover:bg-[#FF3B30] hover:text-white transition-colors duration-200"
+                        className="block px-4 py-3 text-sm font-medium text-white/90 hover:bg-[#C0C0C0] hover:text-gray-900 transition-colors duration-200"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         {item.name}
@@ -257,14 +257,14 @@ export default function ProfessionalHeader() {
               <div className="px-4 py-4 border-t border-white/10 space-y-3 bg-[#0A1F4D] bg-opacity-95 backdrop-blur-sm">
                 <Link
                   href="/inventory"
-                  className="block w-full px-4 py-3 text-center text-sm font-medium text-white/90 hover:bg-[#FF3B30] hover:text-white rounded-md transition-colors duration-200"
+                  className="block w-full px-4 py-3 text-center text-sm font-medium text-white/90 hover:bg-[#C0C0C0] hover:text-gray-900 rounded-md transition-colors duration-200"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Browse Inventory
                 </Link>
                 <Link
                   href="/financing"
-                  className="block w-full px-4 py-3 text-center text-sm font-medium text-white bg-[#FF3B30] hover:bg-[#E6352B] rounded-md shadow-lg hover:shadow-xl hover:scale-[1.02] transform transition-all duration-200"
+                  className="block w-full px-4 py-3 text-center text-sm font-medium text-gray-900 bg-[#C0C0C0] hover:bg-[#D3D3D3] rounded-md shadow-lg hover:shadow-xl hover:scale-[1.02] transform transition-all duration-200"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Get Pre-Approved

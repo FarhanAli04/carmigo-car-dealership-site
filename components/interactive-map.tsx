@@ -40,11 +40,8 @@ export function InteractiveMap() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Visit Our</span>
-            <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent ml-4">
-              Houston Locations
-            </span>
+          <h2 className="text-heading mb-4 bg-gradient-to-r from-gray-900 to-primary-600 bg-clip-text text-transparent">
+            Visit Our Dealership
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
             Experience our premium showroom and service facilities in the heart of Houston
@@ -60,43 +57,47 @@ export function InteractiveMap() {
             viewport={{ once: true }}
             className="lg:col-span-2"
           >
-            <Card className="overflow-hidden bg-gradient-to-br from-gray-800/50 to-gray-900/50 border-gray-700/50 backdrop-blur-sm h-full">
-              <CardContent className="p-0">
-                <div className="aspect-video w-full bg-gradient-to-br from-blue-900/20 to-cyan-900/20 flex items-center justify-center relative overflow-hidden">
-                  {/* Simulated Map Background */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/10" />
-                  <div className="absolute inset-0 opacity-20">
-                    <div className="grid grid-cols-8 grid-rows-6 h-full">
-                      {Array.from({ length: 48 }).map((_, i) => (
-                        <div key={i} className="border border-gray-600/20" />
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Location Markers */}
-                  <div className="relative z-10 flex items-center justify-center">
-                    <div className="text-center">
-                      <motion.div
-                        animate={{ scale: [1, 1.2, 1] }}
-                        transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-                        className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-2xl"
-                      >
-                        <MapPin className="h-8 w-8 text-white" />
-                      </motion.div>
-                      <h3 className="text-white font-bold text-lg">Carmigo Houston</h3>
-                      <p className="text-gray-400 text-sm">123 Main Street</p>
-                    </div>
-                  </div>
-
-                  {/* Interactive Elements */}
-                  <div className="absolute bottom-4 left-4">
-                    <Button size="sm" className="bg-white/20 hover:bg-white/30 backdrop-blur-sm border border-white/30">
-                      <Navigation className="h-4 w-4 mr-2" />
-                      Get Directions
-                    </Button>
+            <Card className="overflow-hidden shadow-2xl border-0 bg-white/80 backdrop-blur-xl">
+              {/* Map Container */}
+              <div className="h-96 w-full bg-gradient-to-br from-primary-50 to-secondary-50 relative">
+                {/* Simulated Map Background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/10" />
+                <div className="absolute inset-0 opacity-20">
+                  <div className="grid grid-cols-8 grid-rows-6 h-full">
+                    {Array.from({ length: 48 }).map((_, i) => (
+                      <div key={i} className="border border-gray-600/20" />
+                    ))}
                   </div>
                 </div>
-              </CardContent>
+
+                {/* Location Markers */}
+                <div className="relative z-10 flex items-center justify-center">
+                  <div className="text-center">
+                    <motion.div
+                      animate={{ scale: [1, 1.2, 1] }}
+                      transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+                      className="w-16 h-16 bg-gradient-to-br from-primary-600 to-secondary-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-2xl"
+                    >
+                      <MapPin className="h-8 w-8 text-white" />
+                    </motion.div>
+                    <h3 className="text-white font-bold text-lg">Carmigo Houston</h3>
+                    <p className="text-gray-400 text-sm">123 Main Street</p>
+                  </div>
+                </div>
+
+                {/* Interactive Elements */}
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10 bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg w-11/12 max-w-md hover:shadow-xl transition-shadow">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-primary-100 to-secondary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <MapPin className="h-8 w-8 text-primary-600" />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="text-lg font-bold text-gray-900 mb-2">Get Directions</h4>
+                      <p className="text-gray-500 text-sm">Find your way to our dealership</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </Card>
           </motion.div>
 
@@ -172,13 +173,17 @@ export function InteractiveMap() {
             ))}
 
             {/* Quick Actions */}
-            <Card className="bg-gradient-to-br from-yellow-500/10 to-orange-500/10 border-yellow-500/30 backdrop-blur-sm">
+            <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-primary-100 to-secondary-100 rounded-full px-4 py-2 mb-4">
+              <MapPin className="w-4 h-4 text-primary-600" />
+              <span className="text-primary-700 font-medium text-sm">Find Us Easily</span>
+            </div>
+            <Card className="overflow-hidden shadow-2xl border-0 bg-white/80 backdrop-blur-xl">
               <CardContent className="p-6 text-center">
-                <h3 className="text-lg font-bold text-white mb-2">Schedule a Visit</h3>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Schedule a Visit</h3>
                 <p className="text-gray-400 text-sm mb-4">
                   Book a personalized tour of our showroom and test drive your dream car
                 </p>
-                <Button className="w-full bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-black font-semibold">
+                <Button className="mt-4 w-full bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-700 hover:to-secondary-700 text-white shadow-lg hover:shadow-xl transition-all duration-300">
                   Schedule Now
                 </Button>
               </CardContent>

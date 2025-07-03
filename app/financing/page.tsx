@@ -91,7 +91,7 @@ export default function FinancingPage() {
 
       {/* Hero Section */}
       <section className="relative h-96 flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 to-slate-800/70 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0A1F4D]/90 to-[#0A1F4D]/70 z-10"></div>
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url(/placeholder.svg?height=400&width=1200)" }}
@@ -119,12 +119,12 @@ export default function FinancingPage() {
                 transition={{ delay: index * 0.1 }}
                 className="card-professional p-6 text-center hover-lift"
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-slate-800 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-gradient-to-br from-[#0A1F4D] to-[#C0C0C0] rounded-xl flex items-center justify-center mx-auto mb-4">
                   <benefit.icon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2 text-slate-800">{benefit.title}</h3>
+                <h3 className="text-xl font-semibold mb-2 text-[#0A1F4D]">{benefit.title}</h3>
                 <p className="text-slate-600 text-sm mb-3">{benefit.description}</p>
-                <span className="inline-block bg-amber-100 text-amber-800 text-xs px-2 py-1 rounded-full font-medium">
+                <span className="inline-block bg-[#C0C0C0] text-[#0A1F4D] text-xs px-2 py-1 rounded-full font-medium">
                   {benefit.highlight}
                 </span>
               </motion.div>
@@ -134,7 +134,7 @@ export default function FinancingPage() {
       </section>
 
       {/* Calculator and Form Section */}
-      <section className="section-padding bg-slate-50">
+      <section className="section-padding bg-[#0A1F4D]/5">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Payment Calculator */}
@@ -145,15 +145,15 @@ export default function FinancingPage() {
             >
               <div className="card-professional p-8">
                 <div className="flex items-center mb-6">
-                  <Calculator className="h-6 w-6 mr-3 text-blue-600" />
-                  <h2 className="text-2xl font-bold text-slate-800">Payment Calculator</h2>
+                  <Calculator className="h-6 w-6 mr-3 text-[#0A1F4D]" />
+                  <h2 className="text-2xl font-bold text-[#0A1F4D]">Payment Calculator</h2>
                 </div>
-                <p className="text-slate-600 mb-8">Calculate your estimated monthly payment</p>
+                <p className="text-[#C0C0C0] mb-8">Calculate your estimated monthly payment</p>
 
                 <div className="space-y-8">
                   {/* Vehicle Price */}
                   <div>
-                    <label className="block text-base font-medium text-slate-700 mb-3">
+                    <label className="block text-base font-medium text-[#C0C0C0] mb-3">
                       Vehicle Price: ${loanAmount[0].toLocaleString()}
                     </label>
                     <input
@@ -163,9 +163,9 @@ export default function FinancingPage() {
                       step="1000"
                       value={loanAmount[0]}
                       onChange={(e) => setLoanAmount([Number.parseInt(e.target.value)])}
-                      className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer"
+                      className="w-full h-2 bg-[#C0C0C0] rounded-lg appearance-none cursor-pointer"
                     />
-                    <div className="flex justify-between text-sm text-slate-400 mt-1">
+                    <div className="flex justify-between text-sm text-[#C0C0C0] mt-1">
                       <span>$10,000</span>
                       <span>$100,000</span>
                     </div>
@@ -173,7 +173,7 @@ export default function FinancingPage() {
 
                   {/* Down Payment */}
                   <div>
-                    <label className="block text-base font-medium text-slate-700 mb-3">
+                    <label className="block text-base font-medium text-[#C0C0C0] mb-3">
                       Down Payment: ${downPayment[0].toLocaleString()} (
                       {((downPayment[0] / loanAmount[0]) * 100).toFixed(1)}%)
                     </label>
@@ -184,13 +184,13 @@ export default function FinancingPage() {
                       step="500"
                       value={downPayment[0]}
                       onChange={(e) => setDownPayment([Number.parseInt(e.target.value)])}
-                      className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer"
+                      className="w-full h-2 bg-[#C0C0C0] rounded-lg appearance-none cursor-pointer"
                     />
                   </div>
 
                   {/* Loan Term */}
                   <div>
-                    <label className="block text-base font-medium text-slate-700 mb-3">
+                    <label className="block text-base font-medium text-[#C0C0C0] mb-3">
                       Loan Term: {loanTerm[0]} months ({(loanTerm[0] / 12).toFixed(1)} years)
                     </label>
                     <input
@@ -200,13 +200,13 @@ export default function FinancingPage() {
                       step="12"
                       value={loanTerm[0]}
                       onChange={(e) => setLoanTerm([Number.parseInt(e.target.value)])}
-                      className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer"
+                      className="w-full h-2 bg-[#C0C0C0] rounded-lg appearance-none cursor-pointer"
                     />
                   </div>
 
                   {/* Interest Rate */}
                   <div>
-                    <label className="block text-base font-medium text-slate-700 mb-3">
+                    <label className="block text-base font-medium text-[#C0C0C0] mb-3">
                       Interest Rate: {interestRate[0]}% APR
                     </label>
                     <input
@@ -216,27 +216,27 @@ export default function FinancingPage() {
                       step="0.1"
                       value={interestRate[0]}
                       onChange={(e) => setInterestRate([Number.parseFloat(e.target.value)])}
-                      className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer"
+                      className="w-full h-2 bg-[#C0C0C0] rounded-lg appearance-none cursor-pointer"
                     />
                   </div>
 
                   {/* Results */}
-                  <div className="bg-green-50 p-6 rounded-xl border border-green-200">
-                    <h3 className="text-xl font-bold text-slate-800 mb-4 text-center">Estimated Monthly Payment</h3>
+                  <div className="bg-[#0A1F4D] p-6 rounded-xl border border-[#C0C0C0]/30">
+                    <h3 className="text-xl font-bold text-[#C0C0C0] mb-4 text-center">Estimated Monthly Payment</h3>
                     <div className="text-center mb-6">
-                      <div className="text-5xl font-bold text-green-600 mb-2">${monthlyPayment.toFixed(0)}</div>
-                      <div className="text-slate-600">per month</div>
+                      <div className="text-5xl font-bold text-[#C0C0C0] mb-2">${monthlyPayment.toFixed(0)}</div>
+                      <div className="text-[#C0C0C0]">per month</div>
                     </div>
                     <div className="grid grid-cols-2 gap-4 text-sm">
-                      <div className="text-center p-3 bg-white rounded-lg">
-                        <div className="text-slate-800 font-medium">
+                      <div className="text-center p-3 bg-[#C0C0C0]/10 rounded-lg">
+                        <div className="text-[#C0C0C0] font-medium">
                           ${(loanAmount[0] - downPayment[0]).toLocaleString()}
                         </div>
-                        <div className="text-slate-600">Loan Amount</div>
+                        <div className="text-[#C0C0C0]">Loan Amount</div>
                       </div>
-                      <div className="text-center p-3 bg-white rounded-lg">
-                        <div className="text-slate-800 font-medium">${totalInterest.toFixed(0)}</div>
-                        <div className="text-slate-600">Total Interest</div>
+                      <div className="text-center p-3 bg-[#C0C0C0]/10 rounded-lg">
+                        <div className="text-[#C0C0C0] font-medium">${totalInterest.toFixed(0)}</div>
+                        <div className="text-[#C0C0C0]">Total Interest</div>
                       </div>
                     </div>
                   </div>
@@ -251,7 +251,7 @@ export default function FinancingPage() {
               transition={{ duration: 0.8 }}
             >
               <div className="card-professional p-8">
-                <h2 className="text-2xl font-bold text-slate-800 mb-6">Get Pre-Approved in 60 Seconds</h2>
+                <h2 className="text-2xl font-bold text-[#0A1F4D] mb-6">Get Pre-Approved in 60 Seconds</h2>
                 <p className="text-slate-600 mb-8">
                   Fill out this secure form to get your instant pre-approval decision
                 </p>
@@ -259,7 +259,7 @@ export default function FinancingPage() {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-slate-700 mb-2">First Name *</label>
+                      <label className="block text-sm font-medium text-[#0A1F4D] mb-2">First Name *</label>
                       <input
                         type="text"
                         value={formData.firstName}
@@ -269,7 +269,7 @@ export default function FinancingPage() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-slate-700 mb-2">Last Name *</label>
+                      <label className="block text-sm font-medium text-[#0A1F4D] mb-2">Last Name *</label>
                       <input
                         type="text"
                         value={formData.lastName}
@@ -332,7 +332,7 @@ export default function FinancingPage() {
                     </select>
                   </div>
 
-                  <button type="submit" className="btn-primary w-full text-lg py-4">
+                  <button type="submit" className="w-full text-lg py-4 bg-[#0A1F4D] hover:bg-[#0A1F4D]/90 text-white rounded-lg transition-colors duration-200">
                     <Zap className="h-5 w-5 mr-2" />
                     Get Instant Pre-Approval
                   </button>

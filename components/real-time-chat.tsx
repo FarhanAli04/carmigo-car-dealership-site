@@ -84,7 +84,7 @@ export function RealTimeChat() {
       >
         <Button
           onClick={() => setIsOpen(!isOpen)}
-          className="w-16 h-16 rounded-full bg-gradient-to-r from-[#FF3B30] to-[#E6352B] hover:from-[#E6352B] hover:to-[#CC2E26] shadow-2xl hover:shadow-red-500/25 transition-all duration-300 relative"
+          className="w-16 h-16 rounded-full bg-gradient-to-r from-silver-500 to-silver-600 hover:from-silver-600 hover:to-silver-700 shadow-2xl hover:shadow-silver-500/25 transition-all duration-300 relative"
         >
           <AnimatePresence mode="wait">
             {isOpen ? (
@@ -111,7 +111,7 @@ export function RealTimeChat() {
           </AnimatePresence>
 
           {/* Notification Dot */}
-          <div className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full flex items-center justify-center">
+          <div className="absolute -top-1 -right-1 w-4 h-4 bg-slate-700 rounded-full flex items-center justify-center">
             <span className="text-xs text-white font-bold">1</span>
           </div>
         </Button>

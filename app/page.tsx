@@ -39,17 +39,17 @@ export default function HomePage() {
   }
 
   const stats = [
-    { label: "Vehicles Available", value: "247+", icon: Car, color: "from-blue-500 to-cyan-500" },
-    { label: "Happy Customers", value: "15K+", icon: Star, color: "from-yellow-500 to-orange-500" },
-    { label: "Years in Business", value: "20+", icon: Award, color: "from-purple-500 to-pink-500" },
-    { label: "Average Savings", value: "$8K", icon: DollarSign, color: "from-green-500 to-emerald-500" },
+    { label: "Vehicles Available", value: "247+", icon: Car, color: "from-primary-600 to-primary-800" },
+    { label: "Happy Customers", value: "15K+", icon: Star, color: "from-amber-500 to-amber-600" },
+    { label: "Years in Business", value: "20+", icon: Award, color: "from-slate-700 to-slate-800" },
+    { label: "Average Savings", value: "$8K", icon: DollarSign, color: "from-emerald-500 to-emerald-600" },
   ]
 
   const makes = [...new Set(inventoryData.map((car) => car.make))].sort()
   const bodyTypes = [...new Set(inventoryData.map((car) => car.bodyType))].sort()
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50/30">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-primary-50/20">
       <ProfessionalHeader />
 
       {/* Hero Section */}
@@ -63,14 +63,14 @@ export default function HomePage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-blue-900/70 to-purple-900/80" />
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 via-primary-900/80 to-primary-800/80" />
         </div>
 
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-20 w-32 h-32 bg-blue-500/20 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-20 right-20 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl animate-pulse delay-1000" />
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full blur-3xl animate-pulse delay-500" />
+          <div className="absolute top-20 left-20 w-32 h-32 bg-primary-500/20 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-20 right-20 w-40 h-40 bg-primary-600/20 rounded-full blur-3xl animate-pulse delay-1000" />
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-primary-500/10 to-primary-600/10 rounded-full blur-3xl animate-pulse delay-500" />
         </div>
 
         <div className="container-custom relative z-10 text-center text-white">
@@ -81,20 +81,20 @@ export default function HomePage() {
           >
             <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
               <Sparkles className="w-4 h-4 text-yellow-400" />
-              <span className="text-yellow-400 font-medium text-sm">Premium Auto Dealer</span>
+              <span className="text-amber-400 font-medium text-sm">Premium Auto Dealer</span>
             </div>
 
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-white via-primary-100 to-primary-50 bg-clip-text text-transparent">
                 Find Your
               </span>
               <br />
-              <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-primary-400 via-primary-500 to-primary-600 bg-clip-text text-transparent">
                 Dream Car
               </span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-gray-100 mb-8 max-w-3xl mx-auto leading-relaxed">
               Discover premium vehicles with competitive financing, exceptional service, and unbeatable value in the
               heart of Dallas-Fort Worth.
             </p>
@@ -103,7 +103,7 @@ export default function HomePage() {
               <Button
                 asChild
                 size="lg"
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-lg px-8 py-4 shadow-2xl hover:shadow-blue-500/25 transition-all duration-300"
+                className="bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white text-lg px-8 py-4 shadow-2xl hover:shadow-primary-500/25 transition-all duration-300"
               >
                 <Link href="/inventory">
                   <Car className="w-5 h-5 mr-2" />
@@ -138,7 +138,7 @@ export default function HomePage() {
                     <stat.icon className="w-8 h-8 text-white" />
                   </div>
                   <div className="text-3xl font-bold text-white mb-1">{stat.value}</div>
-                  <div className="text-blue-200 text-sm">{stat.label}</div>
+                  <div className="text-gray-200 text-sm">{stat.label}</div>
                 </motion.div>
               ))}
             </div>
@@ -171,14 +171,14 @@ export default function HomePage() {
             className="max-w-5xl mx-auto"
           >
             <Card className="shadow-2xl border-0 bg-white/90 backdrop-blur-xl overflow-hidden">
-              <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 p-6 text-white">
+              <div className="bg-gradient-to-r from-primary-600 via-primary-700 to-primary-800 p-6 text-white">
                 <div className="flex items-center gap-3 mb-2">
                   <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
                     <Search className="w-5 h-5" />
                   </div>
                   <h2 className="text-2xl font-bold">Find Your Perfect Vehicle</h2>
                 </div>
-                <p className="text-blue-100">Search through our premium inventory of 247+ vehicles</p>
+                <p className="text-gray-100">Search through our premium inventory of 247+ vehicles</p>
               </div>
 
               <CardContent className="p-8">
@@ -188,7 +188,7 @@ export default function HomePage() {
                     <select
                       value={searchFilters.make}
                       onChange={(e) => setSearchFilters({ ...searchFilters, make: e.target.value })}
-                      className="w-full p-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white shadow-sm"
+                      className="w-full p-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white shadow-sm"
                     >
                       <option value="">All Makes</option>
                       {makes.map((make) => (
@@ -204,7 +204,7 @@ export default function HomePage() {
                     <select
                       value={searchFilters.bodyType}
                       onChange={(e) => setSearchFilters({ ...searchFilters, bodyType: e.target.value })}
-                      className="w-full p-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white shadow-sm"
+                      className="w-full p-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white shadow-sm"
                     >
                       <option value="">All Types</option>
                       {bodyTypes.map((type) => (
@@ -220,7 +220,7 @@ export default function HomePage() {
                     <select
                       value={searchFilters.maxPrice}
                       onChange={(e) => setSearchFilters({ ...searchFilters, maxPrice: e.target.value })}
-                      className="w-full p-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white shadow-sm"
+                      className="w-full p-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white shadow-sm"
                     >
                       <option value="">Any Price</option>
                       <option value="25000">Under $25,000</option>
@@ -242,15 +242,15 @@ export default function HomePage() {
                 </div>
 
                 <div className="flex flex-wrap gap-3 justify-center">
-                  <Badge className="bg-gradient-to-r from-green-100 to-emerald-100 text-green-700 border-green-200">
+                  <Badge className="bg-gradient-to-r from-[#0A1F4D]/10 to-[#0A1F4D]/20 text-[#0A1F4D] border-[#0A1F4D]/30">
                     <Shield className="w-3 h-3 mr-1" />
                     Certified Pre-Owned Available
                   </Badge>
-                  <Badge className="bg-gradient-to-r from-blue-100 to-cyan-100 text-blue-700 border-blue-200">
+                  <Badge className="bg-gradient-to-r from-[#C0C0C0]/20 to-[#C0C0C0]/40 text-[#0A1F4D] border-[#C0C0C0]/50">
                     <Zap className="w-3 h-3 mr-1" />
                     60-Second Financing
                   </Badge>
-                  <Badge className="bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 border-purple-200">
+                  <Badge className="bg-gradient-to-r from-[#0A1F4D]/10 to-[#C0C0C0]/30 text-[#0A1F4D] border-[#0A1F4D]/30">
                     <TrendingUp className="w-3 h-3 mr-1" />
                     Best Price Guarantee
                   </Badge>

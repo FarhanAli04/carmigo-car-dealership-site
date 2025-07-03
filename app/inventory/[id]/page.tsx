@@ -104,16 +104,16 @@ export default function VehicleDetailPage() {
 
       <div className="container-custom py-12">
         {/* Breadcrumb */}
-        <nav className="flex items-center space-x-2 text-sm text-slate-600 mb-8">
-          <Link href="/" className="hover:text-blue-600">
+        <nav className="flex items-center space-x-2 text-sm text-[#0A1F4D]/80 mb-8">
+          <Link href="/" className="hover:text-[#0A1F4D] transition-colors">
             Home
           </Link>
-          <span>/</span>
-          <Link href="/inventory" className="hover:text-blue-600">
+          <span className="text-[#0A1F4D]/50">/</span>
+          <Link href="/inventory" className="hover:text-[#0A1F4D] transition-colors">
             Inventory
           </Link>
-          <span>/</span>
-          <span className="text-slate-800 font-medium">
+          <span className="text-[#0A1F4D]/50">/</span>
+          <span className="text-[#0A1F4D] font-medium">
             {vehicle.year} {vehicle.make} {vehicle.model}
           </span>
         </nav>
@@ -121,7 +121,7 @@ export default function VehicleDetailPage() {
         <div className="grid lg:grid-cols-3 gap-12">
           {/* Left Column - Images and Gallery */}
           <div className="lg:col-span-2">
-            <Card className="overflow-hidden shadow-2xl border-0 bg-white/80 backdrop-blur-xl mb-8">
+            <Card className="overflow-hidden shadow-2xl border border-[#C0C0C0]/30 bg-white/90 backdrop-blur-xl mb-8">
               <div className="relative">
                 {/* Main Image */}
                 <div className="relative aspect-video overflow-hidden">
@@ -154,19 +154,19 @@ export default function VehicleDetailPage() {
                   {/* Badges */}
                   <div className="absolute top-4 left-4 flex flex-col gap-2">
                     {vehicle.isCertified && (
-                      <Badge className="bg-gradient-to-r from-green-500 to-emerald-500 text-white border-0 shadow-lg">
+                      <Badge className="bg-gradient-to-r from-[#0A1F4D] to-[#0A1F4D]/90 text-white border-0 shadow-lg">
                         <Shield className="h-3 w-3 mr-1" />
                         Certified Pre-Owned
                       </Badge>
                     )}
                     {vehicle.daysOnLot <= 3 && (
-                      <Badge className="bg-gradient-to-r from-red-500 to-pink-500 text-white border-0 shadow-lg animate-pulse">
+                      <Badge className="bg-gradient-to-r from-[#C0C0C0] to-[#A0A0A0] text-[#0A1F4D] border-0 shadow-lg animate-pulse">
                         <Zap className="h-3 w-3 mr-1" />
                         Hot Deal
                       </Badge>
                     )}
                     {vehicle.savings > 0 && (
-                      <Badge className="bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold shadow-lg">
+                      <Badge className="bg-gradient-to-r from-[#0A1F4D] to-[#0A1F4D]/80 text-white font-bold shadow-lg">
                         <Sparkles className="h-3 w-3 mr-1" />
                         Save ${vehicle.savings.toLocaleString()}
                       </Badge>
@@ -175,7 +175,7 @@ export default function VehicleDetailPage() {
                 </div>
 
                 {/* Thumbnail Gallery */}
-                <div className="p-4 bg-gradient-to-r from-slate-50 to-blue-50">
+                <div className="p-4 bg-gradient-to-r from-[#0A1F4D]/5 to-[#0A1F4D]/10">
                   <div className="flex gap-2 overflow-x-auto">
                     {vehicle.images.map((image, index) => (
                       <button
@@ -183,8 +183,8 @@ export default function VehicleDetailPage() {
                         onClick={() => setCurrentImageIndex(index)}
                         className={`flex-shrink-0 w-20 h-16 rounded-lg overflow-hidden border-2 transition-all duration-300 ${
                           currentImageIndex === index
-                            ? "border-blue-500 shadow-lg"
-                            : "border-slate-200 hover:border-slate-300"
+                            ? "border-[#0A1F4D] shadow-lg"
+                            : "border-[#C0C0C0] hover:border-[#0A1F4D]/50"
                         }`}
                       >
                         <Image
@@ -205,28 +205,31 @@ export default function VehicleDetailPage() {
             <Card className="shadow-2xl border-0 bg-white/80 backdrop-blur-xl">
               <CardContent className="p-0">
                 <Tabs value={selectedTab} onValueChange={setSelectedTab}>
-                  <TabsList className="grid w-full grid-cols-4 bg-gradient-to-r from-blue-50 to-purple-50">
+                  <TabsList className="grid w-full grid-cols-4 bg-gradient-to-r from-[#0A1F4D]/5 to-[#0A1F4D]/10">
                     <TabsTrigger
                       value="overview"
-                      className="data-[state=active]:bg-white data-[state=active]:shadow-lg"
+                      className="data-[state=active]:bg-white data-[state=active]:shadow-lg text-[#0A1F4D] data-[state=active]:text-[#0A1F4D]"
                     >
                       <Car className="w-4 h-4 mr-2" />
                       Overview
                     </TabsTrigger>
                     <TabsTrigger
                       value="features"
-                      className="data-[state=active]:bg-white data-[state=active]:shadow-lg"
+                      className="data-[state=active]:bg-white data-[state=active]:shadow-lg text-[#0A1F4D] data-[state=active]:text-[#0A1F4D]"
                     >
                       <Sparkles className="w-4 h-4 mr-2" />
                       Features
                     </TabsTrigger>
-                    <TabsTrigger value="history" className="data-[state=active]:bg-white data-[state=active]:shadow-lg">
+                    <TabsTrigger 
+                      value="history" 
+                      className="data-[state=active]:bg-white data-[state=active]:shadow-lg text-[#0A1F4D] data-[state=active]:text-[#0A1F4D]"
+                    >
                       <FileText className="w-4 h-4 mr-2" />
                       History
                     </TabsTrigger>
                     <TabsTrigger
                       value="warranty"
-                      className="data-[state=active]:bg-white data-[state=active]:shadow-lg"
+                      className="data-[state=active]:bg-white data-[state=active]:shadow-lg text-[#0A1F4D] data-[state=active]:text-[#0A1F4D]"
                     >
                       <Shield className="w-4 h-4 mr-2" />
                       Warranty
@@ -236,55 +239,55 @@ export default function VehicleDetailPage() {
                   <div className="p-8">
                     <TabsContent value="overview" className="space-y-6">
                       <div>
-                        <h3 className="text-2xl font-bold text-slate-800 mb-4">Vehicle Specifications</h3>
+                        <h3 className="text-2xl font-bold text-[#0A1F4D] mb-4">Vehicle Specifications</h3>
                         <div className="grid md:grid-cols-2 gap-4">
                           {vehicleSpecs.map((spec, index) => (
                             <div
                               key={index}
-                              className="flex justify-between items-center p-3 bg-gradient-to-r from-slate-50 to-blue-50 rounded-lg"
+                              className="flex justify-between items-center p-3 bg-gradient-to-r from-[#0A1F4D]/5 to-[#0A1F4D]/10 rounded-lg border border-[#C0C0C0]/30"
                             >
-                              <span className="text-slate-600 font-medium">{spec.label}:</span>
-                              <span className="text-slate-800 font-semibold">{spec.value}</span>
+                              <span className="text-[#0A1F4D]/80 font-medium">{spec.label}:</span>
+                              <span className="text-[#0A1F4D] font-semibold">{spec.value}</span>
                             </div>
                           ))}
                         </div>
                       </div>
 
                       <div className="grid md:grid-cols-4 gap-4">
-                        <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl p-4 text-center">
-                          <Fuel className="w-8 h-8 text-blue-600 mx-auto mb-2" />
-                          <div className="text-2xl font-bold text-slate-800">{vehicle.mpg}</div>
-                          <div className="text-sm text-slate-600">Fuel Economy</div>
+                        <div className="bg-gradient-to-r from-[#0A1F4D]/5 to-[#0A1F4D]/10 rounded-xl p-4 text-center border border-[#C0C0C0]/30">
+                          <Fuel className="w-8 h-8 text-[#0A1F4D] mx-auto mb-2" />
+                          <div className="text-2xl font-bold text-[#0A1F4D]">{vehicle.mpg}</div>
+                          <div className="text-sm text-[#0A1F4D]/80">Fuel Economy</div>
                         </div>
-                        <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-4 text-center">
-                          <Gauge className="w-8 h-8 text-green-600 mx-auto mb-2" />
-                          <div className="text-2xl font-bold text-slate-800">{vehicle.drivetrain}</div>
-                          <div className="text-sm text-slate-600">Drivetrain</div>
+                        <div className="bg-gradient-to-r from-[#0A1F4D]/5 to-[#0A1F4D]/10 rounded-xl p-4 text-center border border-[#C0C0C0]/30">
+                          <Gauge className="w-8 h-8 text-[#0A1F4D] mx-auto mb-2" />
+                          <div className="text-2xl font-bold text-[#0A1F4D]">{vehicle.drivetrain}</div>
+                          <div className="text-sm text-[#0A1F4D]/80">Drivetrain</div>
                         </div>
-                        <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-4 text-center">
-                          <Settings className="w-8 h-8 text-purple-600 mx-auto mb-2" />
-                          <div className="text-2xl font-bold text-slate-800">{vehicle.transmission}</div>
-                          <div className="text-sm text-slate-600">Transmission</div>
+                        <div className="bg-gradient-to-r from-[#0A1F4D]/5 to-[#0A1F4D]/10 rounded-xl p-4 text-center border border-[#C0C0C0]/30">
+                          <Settings className="w-8 h-8 text-[#0A1F4D] mx-auto mb-2" />
+                          <div className="text-2xl font-bold text-[#0A1F4D]">{vehicle.transmission}</div>
+                          <div className="text-sm text-[#0A1F4D]/80">Transmission</div>
                         </div>
-                        <div className="bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl p-4 text-center">
-                          <Star className="w-8 h-8 text-amber-600 mx-auto mb-2" />
-                          <div className="text-2xl font-bold text-slate-800">{vehicle.rating}</div>
-                          <div className="text-sm text-slate-600">Customer Rating</div>
+                        <div className="bg-gradient-to-r from-[#0A1F4D]/5 to-[#0A1F4D]/10 rounded-xl p-4 text-center border border-[#C0C0C0]/30">
+                          <Star className="w-8 h-8 text-[#0A1F4D] mx-auto mb-2" />
+                          <div className="text-2xl font-bold text-[#0A1F4D]">{vehicle.rating}</div>
+                          <div className="text-sm text-[#0A1F4D]/80">Customer Rating</div>
                         </div>
                       </div>
                     </TabsContent>
 
                     <TabsContent value="features" className="space-y-6">
                       <div>
-                        <h3 className="text-2xl font-bold text-slate-800 mb-4">Standard Features</h3>
+                        <h3 className="text-2xl font-bold text-[#0A1F4D] mb-4">Standard Features</h3>
                         <div className="grid md:grid-cols-2 gap-3">
                           {vehicle.features.map((feature, index) => (
                             <div
                               key={index}
-                              className="flex items-center gap-3 p-3 bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg"
+                              className="flex items-center gap-3 p-3 bg-gradient-to-r from-[#0A1F4D]/5 to-[#0A1F4D]/10 rounded-lg border border-[#C0C0C0]/30"
                             >
-                              <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
-                              <span className="text-slate-700 font-medium">{feature}</span>
+                              <CheckCircle className="w-5 h-5 text-[#0A1F4D] flex-shrink-0" />
+                              <span className="text-[#0A1F4D] font-medium">{feature}</span>
                             </div>
                           ))}
                         </div>
@@ -293,52 +296,52 @@ export default function VehicleDetailPage() {
 
                     <TabsContent value="history" className="space-y-6">
                       <div>
-                        <h3 className="text-2xl font-bold text-slate-800 mb-4">Vehicle History</h3>
+                        <h3 className="text-2xl font-bold text-[#0A1F4D] mb-4">Vehicle History</h3>
                         <div className="space-y-4">
-                          <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-6 border border-green-200">
+                          <div className="bg-gradient-to-r from-[#0A1F4D]/5 to-[#0A1F4D]/10 rounded-xl p-6 border border-[#C0C0C0]/30">
                             <div className="flex items-center gap-3 mb-3">
-                              <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
+                              <div className="w-12 h-12 bg-[#0A1F4D] rounded-full flex items-center justify-center">
                                 <CheckCircle className="w-6 h-6 text-white" />
                               </div>
                               <div>
-                                <h4 className="font-bold text-green-800">Clean Carfax Report</h4>
-                                <p className="text-green-600">Score: {vehicle.carfaxScore}/100</p>
+                                <h4 className="font-bold text-[#0A1F4D]">Clean Carfax Report</h4>
+                                <p className="text-[#0A1F4D]/80">Score: {vehicle.carfaxScore}/100</p>
                               </div>
                             </div>
-                            <ul className="space-y-2 text-green-700">
+                            <ul className="space-y-2 text-[#0A1F4D]">
                               <li className="flex items-center gap-2">
-                                <CheckCircle className="w-4 h-4" />
+                                <CheckCircle className="w-4 h-4 text-[#0A1F4D]" />
                                 No accidents reported
                               </li>
                               <li className="flex items-center gap-2">
-                                <CheckCircle className="w-4 h-4" />
+                                <CheckCircle className="w-4 h-4 text-[#0A1F4D]" />
                                 Single previous owner
                               </li>
                               <li className="flex items-center gap-2">
-                                <CheckCircle className="w-4 h-4" />
+                                <CheckCircle className="w-4 h-4 text-[#0A1F4D]" />
                                 Regular maintenance records
                               </li>
                               <li className="flex items-center gap-2">
-                                <CheckCircle className="w-4 h-4" />
+                                <CheckCircle className="w-4 h-4 text-[#0A1F4D]" />
                                 No flood or fire damage
                               </li>
                             </ul>
                           </div>
 
-                          <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl p-6">
-                            <h4 className="font-bold text-blue-800 mb-3">Service History</h4>
+                          <div className="bg-gradient-to-r from-[#0A1F4D]/5 to-[#0A1F4D]/10 rounded-xl p-6 border border-[#C0C0C0]/30">
+                            <h4 className="font-bold text-[#0A1F4D] mb-3">Service History</h4>
                             <div className="space-y-3">
                               <div className="flex justify-between items-center">
-                                <span className="text-blue-700">Last Service:</span>
-                                <span className="font-semibold text-blue-800">2 months ago</span>
+                                <span className="text-[#0A1F4D]/80">Last Service:</span>
+                                <span className="font-semibold text-[#0A1F4D]">2 months ago</span>
                               </div>
                               <div className="flex justify-between items-center">
-                                <span className="text-blue-700">Oil Change:</span>
-                                <span className="font-semibold text-blue-800">Recent</span>
+                                <span className="text-[#0A1F4D]/80">Oil Change:</span>
+                                <span className="font-semibold text-[#0A1F4D]">Recent</span>
                               </div>
                               <div className="flex justify-between items-center">
-                                <span className="text-blue-700">Inspection:</span>
-                                <span className="font-semibold text-blue-800">Passed</span>
+                                <span className="text-[#0A1F4D]/80">Inspection:</span>
+                                <span className="font-semibold text-[#0A1F4D]">Passed</span>
                               </div>
                             </div>
                           </div>
@@ -348,41 +351,41 @@ export default function VehicleDetailPage() {
 
                     <TabsContent value="warranty" className="space-y-6">
                       <div>
-                        <h3 className="text-2xl font-bold text-slate-800 mb-4">Warranty Information</h3>
+                        <h3 className="text-2xl font-bold text-[#0A1F4D] mb-4">Warranty Information</h3>
                         <div className="space-y-4">
                           {vehicle.isCertified && (
-                            <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-6 border border-green-200">
+                            <div className="bg-gradient-to-r from-[#0A1F4D]/5 to-[#0A1F4D]/10 rounded-xl p-6 border border-[#C0C0C0]/30">
                               <div className="flex items-center gap-3 mb-3">
-                                <Shield className="w-8 h-8 text-green-600" />
-                                <h4 className="text-xl font-bold text-green-800">Certified Pre-Owned Warranty</h4>
+                                <Shield className="w-8 h-8 text-[#0A1F4D]" />
+                                <h4 className="text-xl font-bold text-[#0A1F4D]">Certified Pre-Owned Warranty</h4>
                               </div>
-                              <ul className="space-y-2 text-green-700">
+                              <ul className="space-y-2 text-[#0A1F4D]">
                                 <li className="flex items-center gap-2">
-                                  <CheckCircle className="w-4 h-4" />
+                                  <CheckCircle className="w-4 h-4 text-[#0A1F4D]" />
                                   7-year/100,000-mile powertrain warranty
                                 </li>
                                 <li className="flex items-center gap-2">
-                                  <CheckCircle className="w-4 h-4" />
+                                  <CheckCircle className="w-4 h-4 text-[#0A1F4D]" />
                                   24/7 roadside assistance
                                 </li>
                                 <li className="flex items-center gap-2">
-                                  <CheckCircle className="w-4 h-4" />
+                                  <CheckCircle className="w-4 h-4 text-[#0A1F4D]" />
                                   Trip interruption coverage
                                 </li>
                                 <li className="flex items-center gap-2">
-                                  <CheckCircle className="w-4 h-4" />
+                                  <CheckCircle className="w-4 h-4 text-[#0A1F4D]" />
                                   Transferable to new owner
                                 </li>
                               </ul>
                             </div>
                           )}
 
-                          <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl p-6">
-                            <h4 className="font-bold text-blue-800 mb-3">Extended Warranty Options</h4>
-                            <p className="text-blue-700 mb-4">
+                          <div className="bg-gradient-to-r from-[#0A1F4D]/5 to-[#0A1F4D]/10 rounded-xl p-6 border border-[#C0C0C0]/30">
+                            <h4 className="font-bold text-[#0A1F4D] mb-3">Extended Warranty Options</h4>
+                            <p className="text-[#0A1F4D]/80 mb-4">
                               Protect your investment with our comprehensive extended warranty plans
                             </p>
-                            <Button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+                            <Button className="bg-gradient-to-r from-[#0A1F4D] to-[#0A1F4D]/90 text-white hover:from-[#0A1F4D]/90 hover:to-[#0A1F4D] transition-colors">
                               Learn More About Warranties
                             </Button>
                           </div>
@@ -398,10 +401,10 @@ export default function VehicleDetailPage() {
           {/* Right Column - Pricing and Actions */}
           <div className="space-y-6">
             {/* Vehicle Title and Price */}
-            <Card className="shadow-2xl border-0 bg-white/80 backdrop-blur-xl">
+            <Card className="shadow-2xl border border-[#C0C0C0]/30 bg-white/90 backdrop-blur-xl">
               <CardContent className="p-8">
                 <div className="text-center mb-6">
-                  <h1 className="text-3xl font-bold text-slate-800 mb-2">
+                  <h1 className="text-3xl font-bold text-[#0A1F4D] mb-2">
                     {vehicle.year} {vehicle.make} {vehicle.model}
                   </h1>
                   <div className="flex items-center justify-center gap-2 mb-4">
@@ -409,37 +412,37 @@ export default function VehicleDetailPage() {
                       {[...Array(5)].map((_, i) => (
                         <Star
                           key={i}
-                          className={`h-5 w-5 ${i < Math.floor(vehicle.rating) ? "fill-yellow-400 text-yellow-400" : "text-gray-300"}`}
+                          className={`h-5 w-5 ${i < Math.floor(vehicle.rating) ? "fill-[#0A1F4D] text-[#0A1F4D]" : "text-[#C0C0C0]"}`}
                         />
                       ))}
                     </div>
-                    <span className="text-slate-600">
+                    <span className="text-[#0A1F4D]/80">
                       ({vehicle.rating}) • {vehicle.viewCount} views
                     </span>
                   </div>
                 </div>
 
                 <div className="text-center mb-8">
-                  <div className="text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">
+                  <div className="text-5xl font-bold bg-gradient-to-r from-[#0A1F4D] to-[#0A1F4D]/90 bg-clip-text text-transparent mb-2">
                     ${vehicle.price.toLocaleString()}
                   </div>
                   {vehicle.originalPrice > vehicle.price && (
-                    <div className="text-xl text-slate-500 line-through mb-2">
+                    <div className="text-xl text-[#0A1F4D]/60 line-through mb-2">
                       ${vehicle.originalPrice.toLocaleString()}
                     </div>
                   )}
-                  <div className="text-slate-600">
+                  <div className="text-[#0A1F4D]/80">
                     {vehicle.mileage.toLocaleString()} miles • {vehicle.condition}
                   </div>
                 </div>
 
                 <div className="space-y-4">
-                  <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-lg py-4 shadow-xl">
+                  <Button className="w-full bg-gradient-to-r from-[#0A1F4D] to-[#0A1F4D]/90 hover:from-[#0A1F4D]/90 hover:to-[#0A1F4D] text-white text-lg py-4 shadow-xl transition-colors">
                     <Calculator className="w-5 h-5 mr-2" />
                     Calculate Payment
                   </Button>
 
-                  <Button className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white text-lg py-4 shadow-xl">
+                  <Button className="w-full bg-gradient-to-r from-[#C0C0C0] to-[#A0A0A0] hover:from-[#A0A0A0] hover:to-[#808080] text-[#0A1F4D] text-lg py-4 shadow-xl transition-colors">
                     <Zap className="w-5 h-5 mr-2" />
                     Get Pre-Approved
                   </Button>
@@ -449,15 +452,15 @@ export default function VehicleDetailPage() {
                       onClick={() => setIsFavorite(!isFavorite)}
                       className={`${
                         isFavorite
-                          ? "bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600"
-                          : "bg-gradient-to-r from-slate-100 to-blue-100 hover:from-slate-200 hover:to-blue-200 text-slate-700"
-                      } transition-all duration-300`}
+                          ? "bg-gradient-to-r from-[#0A1F4D] to-[#0A1F4D]/90 hover:from-[#0A1F4D]/90 hover:to-[#0A1F4D] text-white"
+                          : "bg-gradient-to-r from-[#0A1F4D]/5 to-[#0A1F4D]/10 hover:from-[#0A1F4D]/10 hover:to-[#0A1F4D]/20 text-[#0A1F4D]"
+                      } transition-all duration-300 border border-[#C0C0C0]/30`}
                     >
                       <Heart className={`w-4 h-4 mr-2 ${isFavorite ? "fill-white" : ""}`} />
                       {isFavorite ? "Saved" : "Save"}
                     </Button>
 
-                    <Button className="bg-gradient-to-r from-slate-100 to-blue-100 hover:from-slate-200 hover:to-blue-200 text-slate-700">
+                    <Button className="bg-gradient-to-r from-[#0A1F4D]/5 to-[#0A1F4D]/10 hover:from-[#0A1F4D]/10 hover:to-[#0A1F4D]/20 text-[#0A1F4D] border border-[#C0C0C0]/30 transition-colors">
                       <Share2 className="w-4 h-4 mr-2" />
                       Share
                     </Button>
@@ -467,46 +470,46 @@ export default function VehicleDetailPage() {
             </Card>
 
             {/* Contact Information */}
-            <Card className="shadow-2xl border-0 bg-white/80 backdrop-blur-xl">
+            <Card className="shadow-2xl border border-[#C0C0C0]/30 bg-white/90 backdrop-blur-xl">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Phone className="w-5 h-5 text-blue-600" />
+                <CardTitle className="flex items-center gap-2 text-[#0A1F4D]">
+                  <Phone className="w-5 h-5 text-[#0A1F4D]" />
                   Contact Our Team
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-slate-800 mb-1">(555) 123-4567</div>
-                  <div className="text-slate-600">Sales Department</div>
+                  <div className="text-2xl font-bold text-[#0A1F4D] mb-1">(555) 123-4567</div>
+                  <div className="text-[#0A1F4D]/80">Sales Department</div>
                 </div>
 
                 <div className="space-y-3">
-                  <div className="flex items-center gap-3 p-3 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg">
-                    <MapPin className="w-5 h-5 text-blue-600" />
+                  <div className="flex items-center gap-3 p-3 bg-gradient-to-r from-[#0A1F4D]/5 to-[#0A1F4D]/10 rounded-lg border border-[#C0C0C0]/30">
+                    <MapPin className="w-5 h-5 text-[#0A1F4D]" />
                     <div>
-                      <div className="font-semibold text-slate-800">Visit Our Showroom</div>
-                      <div className="text-sm text-slate-600">123 Auto Drive, Dallas, TX</div>
+                      <div className="font-semibold text-[#0A1F4D]">Visit Our Showroom</div>
+                      <div className="text-sm text-[#0A1F4D]/80">123 Auto Drive, Dallas, TX</div>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-3 p-3 bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg">
-                    <Clock className="w-5 h-5 text-green-600" />
+                  <div className="flex items-center gap-3 p-3 bg-gradient-to-r from-[#0A1F4D]/5 to-[#0A1F4D]/10 rounded-lg border border-[#C0C0C0]/30">
+                    <Clock className="w-5 h-5 text-[#0A1F4D]" />
                     <div>
-                      <div className="font-semibold text-slate-800">Business Hours</div>
-                      <div className="text-sm text-slate-600">Mon-Sat: 9AM-8PM</div>
+                      <div className="font-semibold text-[#0A1F4D]">Business Hours</div>
+                      <div className="text-sm text-[#0A1F4D]/80">Mon-Sat: 9AM-8PM</div>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-3 p-3 bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg">
-                    <Mail className="w-5 h-5 text-purple-600" />
+                  <div className="flex items-center gap-3 p-3 bg-gradient-to-r from-[#0A1F4D]/5 to-[#0A1F4D]/10 rounded-lg border border-[#C0C0C0]/30">
+                    <Mail className="w-5 h-5 text-[#0A1F4D]" />
                     <div>
-                      <div className="font-semibold text-slate-800">Email Us</div>
-                      <div className="text-sm text-slate-600">info@carmigo.com</div>
+                      <div className="font-semibold text-[#0A1F4D]">Email Us</div>
+                      <div className="text-sm text-[#0A1F4D]/80">info@carmigo.com</div>
                     </div>
                   </div>
                 </div>
 
-                <Button className="w-full bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white">
+                <Button className="w-full bg-gradient-to-r from-[#0A1F4D] to-[#0A1F4D]/90 hover:from-[#0A1F4D]/90 hover:to-[#0A1F4D] text-white transition-colors">
                   <Calendar className="w-4 h-4 mr-2" />
                   Schedule Test Drive
                 </Button>
@@ -514,33 +517,33 @@ export default function VehicleDetailPage() {
             </Card>
 
             {/* Trust Indicators */}
-            <Card className="shadow-2xl border-0 bg-white/80 backdrop-blur-xl">
+            <Card className="shadow-2xl border border-[#C0C0C0]/30 bg-white/90 backdrop-blur-xl">
               <CardContent className="p-6">
-                <h3 className="font-bold text-slate-800 mb-4 text-center">Why Choose Carmigo?</h3>
+                <h3 className="font-bold text-[#0A1F4D] mb-4 text-center">Why Choose Carmigo?</h3>
                 <div className="space-y-3">
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center">
+                    <div className="w-8 h-8 bg-gradient-to-r from-[#0A1F4D] to-[#0A1F4D]/90 rounded-full flex items-center justify-center">
                       <Shield className="w-4 h-4 text-white" />
                     </div>
-                    <span className="text-slate-700 font-medium">Licensed & Insured Dealer</span>
+                    <span className="text-[#0A1F4D] font-medium">Licensed & Insured Dealer</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center">
+                    <div className="w-8 h-8 bg-gradient-to-r from-[#0A1F4D] to-[#0A1F4D]/90 rounded-full flex items-center justify-center">
                       <Award className="w-4 h-4 text-white" />
                     </div>
-                    <span className="text-slate-700 font-medium">BBB A+ Rating</span>
+                    <span className="text-[#0A1F4D] font-medium">BBB A+ Rating</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                    <div className="w-8 h-8 bg-gradient-to-r from-[#0A1F4D] to-[#0A1F4D]/90 rounded-full flex items-center justify-center">
                       <Users className="w-4 h-4 text-white" />
                     </div>
-                    <span className="text-slate-700 font-medium">15,000+ Happy Customers</span>
+                    <span className="text-[#0A1F4D] font-medium">15,000+ Happy Customers</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full flex items-center justify-center">
+                    <div className="w-8 h-8 bg-gradient-to-r from-[#0A1F4D] to-[#0A1F4D]/90 rounded-full flex items-center justify-center">
                       <Star className="w-4 h-4 text-white" />
                     </div>
-                    <span className="text-slate-700 font-medium">4.9/5 Customer Rating</span>
+                    <span className="text-[#0A1F4D] font-medium">4.9/5 Customer Rating</span>
                   </div>
                 </div>
               </CardContent>
@@ -551,7 +554,7 @@ export default function VehicleDetailPage() {
         {/* Related Vehicles */}
         {relatedVehicles.length > 0 && (
           <div className="mt-16">
-            <h2 className="text-3xl font-bold text-slate-800 mb-8 text-center">You Might Also Like</h2>
+            <h2 className="text-3xl font-bold text-[#0A1F4D] mb-8 text-center">You Might Also Like</h2>
             <div className="grid md:grid-cols-3 gap-8">
               {relatedVehicles.map((car) => (
                 <motion.div
@@ -560,7 +563,7 @@ export default function VehicleDetailPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6 }}
                 >
-                  <Card className="overflow-hidden shadow-xl border-0 bg-white/80 backdrop-blur-xl hover:shadow-2xl transition-all duration-500 hover:scale-105">
+                  <Card className="overflow-hidden shadow-xl border border-[#C0C0C0]/30 bg-white/90 backdrop-blur-xl hover:shadow-2xl transition-all duration-500 hover:scale-105">
                     <div className="relative">
                       <Image
                         src={car.image || "/placeholder.svg"}
@@ -570,19 +573,19 @@ export default function VehicleDetailPage() {
                         className="w-full h-48 object-cover"
                       />
                       {car.savings > 0 && (
-                        <Badge className="absolute top-4 left-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold shadow-lg">
+                        <Badge className="absolute top-4 left-4 bg-gradient-to-r from-[#0A1F4D] to-[#0A1F4D]/90 text-white font-bold shadow-lg">
                           Save ${car.savings.toLocaleString()}
                         </Badge>
                       )}
                     </div>
                     <CardContent className="p-6">
-                      <h3 className="text-xl font-bold text-slate-800 mb-2">
+                      <h3 className="text-xl font-bold text-[#0A1F4D] mb-2">
                         {car.year} {car.make} {car.model}
                       </h3>
-                      <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
+                      <div className="text-2xl font-bold bg-gradient-to-r from-[#0A1F4D] to-[#0A1F4D]/90 bg-clip-text text-transparent mb-4">
                         ${car.price.toLocaleString()}
                       </div>
-                      <Button asChild className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+                      <Button asChild className="w-full bg-gradient-to-r from-[#0A1F4D] to-[#0A1F4D]/90 hover:from-[#0A1F4D]/90 hover:to-[#0A1F4D] text-white transition-colors">
                         <Link href={`/inventory/${car.id}`}>
                           <Eye className="w-4 h-4 mr-2" />
                           View Details

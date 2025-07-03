@@ -74,21 +74,21 @@ export function GoogleBusinessListing() {
   const isOpen = getCurrentStatus() === "Open"
 
   return (
-    <section className="section-padding bg-gradient-to-br from-slate-50 to-blue-50/30 relative overflow-hidden">
+    <section className="section-padding bg-gradient-to-br from-gray-50 to-primary-50/30 relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-20 left-20 w-32 h-32 bg-blue-400 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 right-20 w-40 h-40 bg-purple-400 rounded-full blur-3xl animate-pulse delay-1000" />
+        <div className="absolute top-20 left-20 w-32 h-32 bg-primary-400 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-20 right-20 w-40 h-40 bg-secondary-400 rounded-full blur-3xl animate-pulse delay-1000" />
       </div>
 
       <div className="container-custom relative z-10">
         <div className="text-center mb-12">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-100 to-purple-100 rounded-full px-4 py-2 mb-4">
-              <Sparkles className="w-4 h-4 text-blue-600" />
-              <span className="text-blue-700 font-medium text-sm">Find Us on Google</span>
+            <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-primary-100 to-secondary-100 rounded-full px-4 py-2 mb-4">
+              <Sparkles className="w-4 h-4 text-primary-600" />
+              <span className="text-primary-700 font-medium text-sm">Find Us on Google</span>
             </div>
-            <h2 className="text-heading mb-4 bg-gradient-to-r from-slate-800 to-blue-600 bg-clip-text text-transparent">
+            <h2 className="text-heading mb-4 bg-gradient-to-r from-gray-900 to-primary-600 bg-clip-text text-transparent">
               Discover Our Google Presence
             </h2>
             <p className="text-slate-600 text-lg max-w-2xl mx-auto">
@@ -101,8 +101,8 @@ export function GoogleBusinessListing() {
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <Card className="overflow-hidden shadow-2xl border-0 bg-white/80 backdrop-blur-xl">
               {/* Header Section */}
-              <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 text-white p-8 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 animate-pulse" />
+              <div className="bg-gradient-to-r from-primary-600 via-secondary-600 to-primary-700 text-white p-8 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-primary-600/20 to-secondary-600/20 animate-pulse" />
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 relative z-10">
                   <div className="flex-1">
                     <div className="flex items-center space-x-3 mb-4">
@@ -125,10 +125,10 @@ export function GoogleBusinessListing() {
                         <span className="text-blue-200">({businessInfo.reviewCount} reviews)</span>
                       </div>
                       <Badge
-                        className={`${isOpen ? "bg-green-500/20 text-green-300 border-green-400/30" : "bg-red-500/20 text-red-300 border-red-400/30"} backdrop-blur-sm`}
+                        className={`${isOpen ? "bg-success-500/20 text-success-300 border-success-400/30" : "bg-error-500/20 text-error-300 border-error-400/30"} backdrop-blur-sm`}
                       >
                         <div
-                          className={`w-2 h-2 ${isOpen ? "bg-green-400" : "bg-red-400"} rounded-full mr-2 animate-pulse`}
+                          className={`w-2 h-2 ${isOpen ? "bg-success-400" : "bg-error-400"} rounded-full mr-2 animate-pulse`}
                         />
                         {isOpen ? "Open Now" : "Closed"}
                       </Badge>
@@ -156,21 +156,21 @@ export function GoogleBusinessListing() {
                   <div className="p-8 space-y-8">
                     <div>
                       <h4 className="font-semibold text-slate-800 mb-6 flex items-center gap-3 text-lg">
-                        <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-500 rounded-lg flex items-center justify-center">
+                        <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center">
                           <MapPin className="h-4 w-4 text-white" />
                         </div>
                         Location & Contact
                       </h4>
                       <div className="space-y-4">
-                        <div className="flex items-start gap-4 p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl">
+                        <div className="flex items-start gap-4 p-4 bg-gradient-to-r from-primary-50 to-secondary-50 rounded-xl">
                           <MapPin className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
                           <span className="text-slate-700 font-medium">{businessInfo.address}</span>
                         </div>
-                        <div className="flex items-center gap-4 p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl">
+                        <div className="flex items-center gap-4 p-4 bg-gradient-to-r from-success-50 to-success-100 rounded-xl">
                           <Phone className="h-5 w-5 text-green-600 flex-shrink-0" />
                           <span className="text-slate-700 font-medium">{businessInfo.phone}</span>
                         </div>
-                        <div className="flex items-center gap-4 p-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl">
+                        <div className="flex items-center gap-4 p-4 bg-gradient-to-r from-secondary-50 to-pink-50 rounded-xl">
                           <ExternalLink className="h-5 w-5 text-purple-600 flex-shrink-0" />
                           <span className="text-blue-600 font-medium">{businessInfo.website}</span>
                         </div>
@@ -179,7 +179,7 @@ export function GoogleBusinessListing() {
 
                     <div>
                       <h4 className="font-semibold text-slate-800 mb-6 flex items-center gap-3 text-lg">
-                        <div className="w-8 h-8 bg-gradient-to-br from-amber-500 to-orange-500 rounded-lg flex items-center justify-center">
+                        <div className="w-8 h-8 bg-gradient-to-br from-accent-500 to-orange-500 rounded-lg flex items-center justify-center">
                           <Clock className="h-4 w-4 text-white" />
                         </div>
                         Business Hours
@@ -195,7 +195,7 @@ export function GoogleBusinessListing() {
                     </div>
 
                     <div className="flex gap-3">
-                      <Button className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg">
+                      <Button className="flex-1 bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-700 hover:to-secondary-700 text-white shadow-lg">
                         <Navigation className="h-4 w-4 mr-2" />
                         Get Directions
                       </Button>
@@ -244,8 +244,8 @@ export function GoogleBusinessListing() {
                           >
                             <div className="flex items-center justify-between mb-3">
                               <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white text-sm font-bold">
-                                  {review.name.charAt(0)}
+                                <div className="w-16 h-16 bg-gradient-to-br from-primary-600 to-secondary-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                                  <span className="text-white text-sm font-bold">{review.name.charAt(0)}</span>
                                 </div>
                                 <div>
                                   <span className="font-semibold text-slate-800">{review.name}</span>
@@ -272,7 +272,7 @@ export function GoogleBusinessListing() {
                 {/* Action Bar */}
                 <div className="border-t border-slate-200/50 p-6 bg-gradient-to-r from-white to-blue-50/30">
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg">
+                    <Button className="bg-gradient-to-r from-primary-100 to-secondary-100 hover:from-primary-200 hover:to-secondary-200 text-primary-700 hover:text-primary-900 shadow-lg">
                       <Calendar className="h-4 w-4 mr-2" />
                       Schedule Visit
                     </Button>
